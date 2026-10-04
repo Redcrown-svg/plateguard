@@ -1,59 +1,56 @@
 <!doctype html>
-<html lang="fr">
+<html lang="pt-BR">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="PlateGuard — vérificateur d'amendes de démonstration, registre personnel multi-devises et guide de paiement par pays.">
+<title>PlateGuard — Consulta oficial de multas no Brasil</title>
+<meta name="description" content="Escolha o estado, digite a placa: o PlateGuard abre a consulta oficial de multas do DETRAN. Sem dados inventados.">
+<meta name="google-site-verification" content="u5GQMm6nCtSKmrYDeWKjyD_B0fD7HqhMqCnFoJRUR6w" />
+<link rel="canonical" href="https://redcrown-svg.github.io/plateguard/">
+<meta name="robots" content="index,follow">
+<meta name="keywords" content="PlateGuard, multas, DETRAN, consulta de multas, placa, RENAVAM, SNE, Carteira Digital de Trânsito, amendes Brésil, Brazil traffic fines">
+<meta property="og:type" content="website">
+<meta property="og:title" content="PlateGuard — Multas de trânsito no Brasil">
+<meta property="og:description" content="Escolha o estado, digite a placa: consulta oficial de multas no DETRAN. Sem dados inventados.">
+<meta property="og:url" content="https://redcrown-svg.github.io/plateguard/">
+<meta property="og:site_name" content="PlateGuard">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0a0f1c">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23f5b400'/%3E%3Ctext x='32' y='44' font-family='monospace' font-weight='800' font-size='36' text-anchor='middle' fill='%231a1300'%3EP%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"PlateGuard","url":"https://redcrown-svg.github.io/plateguard/","applicationCategory":"UtilitiesApplication","operatingSystem":"Web","description":"Consulta oficial de multas no DETRAN. Brasil.","inLanguage":["pt-BR","fr","en","ar"],"offers":{"@type":"Offer","price":"0"}}</script>
 <style>html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}</style>
 </head>
 <body>
-<title>PlateGuard</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
-/* Layout: single centred column (max 900px); header + tab bar, then one stacked view per tab. Dark navy console, single dark theme by design. */
+/* Layout: single centred column (max 820px): header, hero, one lookup console, official links, recent lookups. Dark navy with Brazilian plate blue. Single dark theme by design. */
 :root{
   --bg:#0a0f1c; --panel:#101828; --panel-2:#0d1526; --line:#1e2a40; --line-2:#2a3852;
   --fg:#f1f4fa; --muted:#8b97b0; --muted-2:#5f6b85;
-  --accent:#f5b400; --accent-ink:#1a1300; --accent-dim:#6b5100;
-  --ok:#2fd27a; --ok-bg:rgba(47,210,122,.08); --ok-line:rgba(47,210,122,.35);
-  --bad:#ff5d5d; --bad-bg:rgba(255,93,93,.08); --bad-line:rgba(255,93,93,.38);
-  --warn:#f5b400; --warn-bg:rgba(245,180,0,.09); --warn-line:rgba(245,180,0,.4);
+  --accent:#f5b400; --accent-ink:#1a1300; --br-blue:#0b3b8c;
+  --ok:#2fd27a; --ok-line:rgba(47,210,122,.35);
+  --warn:#f5b400;
   --font:"Manrope","IBM Plex Sans Arabic",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-  --r:14px;
-  color-scheme:dark;
+  --r:14px; color-scheme:dark;
 }
 html[lang=ar]{--font:"IBM Plex Sans Arabic","Manrope",system-ui,sans-serif}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--font);-webkit-font-smoothing:antialiased}
-button,input,select,textarea{font:inherit;color:inherit}
-a{color:var(--accent);text-decoration:none}
-a:hover{text-decoration:underline}
+button,input,select{font:inherit;color:inherit}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.wrap{max-width:900px;margin:0 auto;padding-inline:16px}
-.mono{font-family:var(--mono)}
+.wrap{max-width:820px;margin:0 auto;padding-inline:16px}
 [hidden]{display:none!important}
-
-/* header */
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(10,15,28,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .hd{display:flex;align-items:center;gap:12px;padding-block:10px;flex-wrap:wrap}
 .logo{width:34px;height:34px;border-radius:8px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:800 16px var(--mono)}
-.brand b{display:block;font-weight:800;line-height:1.1}
-.brand span{font-size:12px;color:var(--muted)}
+.brand b{display:block;font-weight:800;line-height:1.1}.brand span{font-size:12px;color:var(--muted)}
 .hd .sp{flex:1}
-.status{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
-.dot{width:8px;height:8px;border-radius:50%;background:var(--warn);box-shadow:0 0 0 3px rgba(245,180,0,.15)}
-.dot.ok{background:var(--ok);box-shadow:0 0 0 3px rgba(47,210,122,.15)}
 .clock{font:12px var(--mono);color:var(--muted)}
 .langs{display:flex;background:var(--panel-2);border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .langs button{background:none;border:0;padding:5px 9px;font:700 12px var(--mono);color:var(--muted);cursor:pointer}
 .langs button[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
-nav.tabs{display:flex;gap:4px;padding-bottom:8px;overflow-x:auto}
-nav.tabs button{background:none;border:1px solid transparent;border-radius:8px;padding:7px 14px;color:var(--muted);font-weight:600;cursor:pointer;white-space:nowrap;display:flex;gap:8px;align-items:center}
-nav.tabs button[aria-selected=true]{background:var(--panel);border-color:var(--line-2);color:var(--fg)}
-nav.tabs .cnt{font:700 11px var(--mono);background:var(--bad);color:#fff;border-radius:999px;padding:1px 7px}
-
-/* hero */
 .hero{padding-block:40px 30px;border-bottom:1px solid var(--line)}
 .eyebrow{font:700 12px var(--mono);letter-spacing:.22em;color:var(--accent);text-transform:uppercase}
 html[lang=ar] .eyebrow{letter-spacing:0}
@@ -62,19 +59,14 @@ html[lang=ar] h1{letter-spacing:0}
 h1 em{font-style:normal;color:var(--accent)}
 .lead{max-width:62ch;color:var(--muted);margin:0 0 16px;font-size:16px}
 .facts{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.facts span{display:flex;align-items:center;gap:6px}
-.facts svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
-
-/* panels */
+.facts span{display:flex;align-items:center;gap:6px}.facts svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
 main{display:grid;gap:18px;padding-block:24px 40px}
-.view{display:grid;gap:18px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:22px}
 .panel h2{margin:0 0 18px;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
 .panel h2 .n{font:700 12px var(--mono);color:var(--accent)}
-.panel h3{margin:0;font-size:15px;display:flex;align-items:center;gap:8px}
-.panel h3 svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.panel h3{margin:0;font-size:15px;display:flex;align-items:center;gap:8px}.panel h3 svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 label.lbl{display:block;font:600 11px var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
-html[lang=ar] label.lbl,html[lang=ar] .k,html[lang=ar] .ih{letter-spacing:0!important}
+html[lang=ar] label.lbl,html[lang=ar] .k{letter-spacing:0!important}
 .field{margin-bottom:14px;min-width:0}
 .ctl{width:100%;background:var(--panel-2);border:1px solid var(--line-2);border-radius:10px;padding:11px 14px;min-height:46px}
 .ctl.warn{border-color:var(--warn)}
@@ -83,191 +75,73 @@ html[dir=rtl] select.ctl{background-position:left 14px center;padding-right:14px
 input.plate{font:600 17px var(--mono);letter-spacing:.06em;text-transform:uppercase;direction:ltr}
 input.ctl::placeholder{color:var(--muted-2);font-weight:400}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.row3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
-@media (max-width:620px){.row2,.row3{grid-template-columns:1fr}}
-.hint{font-size:12px;color:var(--muted);margin-top:6px;min-height:18px}
-.hint b{color:var(--fg);font-weight:600}
-.hint.warn{color:var(--warn)}
-
-/* plate preview */
-.pprev{display:flex;height:88px;border-radius:10px;overflow:hidden;border:1px solid var(--line-2);background:linear-gradient(180deg,#141d31,#0b1120);margin-bottom:16px;box-shadow:inset 0 1px 0 rgba(255,255,255,.05);direction:ltr}
-.pprev .band{width:62px;flex:none;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font:700 12px var(--mono);color:#fff}
-.pprev .band small{font-size:10px;opacity:.85;font-weight:500}
-.pprev .num{flex:1;min-width:0;display:grid;place-items:center;font:700 clamp(22px,5vw,34px) var(--mono);letter-spacing:.18em;padding:0 12px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
-.pprev .num.ph{color:var(--muted-2)}
-
+@media (max-width:620px){.row2{grid-template-columns:1fr}}
+.hint{font-size:12px;color:var(--muted);margin-top:6px;min-height:18px}.hint.warn{color:var(--warn)}
+.pprev{display:flex;height:92px;border-radius:10px;overflow:hidden;border:1px solid var(--line-2);background:linear-gradient(180deg,#f7f7f4,#e6e6e0);margin-bottom:16px;direction:ltr;color:#111;position:relative}
+.pprev .top{position:absolute;left:0;right:0;top:0;height:22px;background:var(--br-blue);color:#fff;font:700 10px var(--mono);letter-spacing:.2em;display:flex;align-items:center;justify-content:center;gap:10px}
+.pprev .num{flex:1;min-width:0;display:grid;place-items:center;font:700 clamp(24px,5.5vw,38px) var(--mono);letter-spacing:.16em;padding:22px 12px 0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.pprev .num.ph{color:#9a9a92}
 .btn{width:100%;border:0;border-radius:10px;padding:14px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;transition:filter .15s}
 .btn:hover{filter:brightness(1.06)}
-.btn:disabled{background:var(--accent-dim);color:#3a2d00;cursor:not-allowed}
 .btn svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.2}
-.btn .spin{width:16px;height:16px;border:2px solid rgba(0,0,0,.25);border-top-color:#000;border-radius:50%;animation:spin .7s linear infinite}
-.btn.ghost{background:var(--panel-2);color:var(--fg);border:1px solid var(--line-2)}
-.btn.sm{width:auto;padding:8px 14px;font-size:13px}
-.btn.danger{background:var(--bad-bg);color:var(--bad);border:1px solid var(--bad-line)}
-@keyframes spin{to{transform:rotate(360deg)}}
-.actions{display:flex;gap:10px;flex-wrap:wrap}
-
-/* results */
-.banner{border-radius:12px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start;border:1px solid;margin-bottom:16px}
-.banner.ok{background:var(--ok-bg);border-color:var(--ok-line)}
-.banner.bad{background:var(--bad-bg);border-color:var(--bad-line)}
-.banner.warn{background:var(--warn-bg);border-color:var(--warn-line)}
-.banner .ic{width:34px;height:34px;flex:none;border-radius:50%;border:2px solid;display:grid;place-items:center}
-.banner.ok .ic{border-color:var(--ok);color:var(--ok)}
-.banner.bad .ic{border-color:var(--bad);color:var(--bad)}
-.banner.warn .ic{border-color:var(--warn);color:var(--warn)}
-.banner .ic svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4}
-.banner b{display:block;font-size:17px;margin-bottom:2px}
-.banner p{margin:0;color:var(--muted);font-size:14px}
-.banner .ref{font:12px var(--mono);color:var(--muted);margin-top:6px}
-.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}
-@media (max-width:620px){.tiles{grid-template-columns:1fr}}
-.tile{background:var(--panel-2);border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0}
-.tile .k{font:600 11px var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.tile .v{font-size:21px;font-weight:700;letter-spacing:-.01em;word-break:break-word;font-variant-numeric:tabular-nums}
-.tile .v.bad{color:var(--bad)}
-.tile .v.ok{color:var(--ok)}
-.tile .sub{font:12px var(--mono);color:var(--muted);margin-top:6px}
-.inf{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:16px}
-.inf .ih{padding:12px 16px;background:var(--panel-2);font:600 11px var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}
-.inf .it{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding:14px 16px;border-top:1px solid var(--line);align-items:center}
-.inf .it b{font-weight:600}
-.inf .it .m{font:12px var(--mono);color:var(--muted)}
-.inf .it .amt{font:700 16px var(--mono);text-align:end;font-variant-numeric:tabular-nums;direction:ltr}
-.inf .it .amt small{display:block;font-size:11px;color:var(--muted);font-weight:400}
-.pill{display:inline-block;font:600 11px var(--mono);padding:2px 8px;border-radius:999px;border:1px solid;vertical-align:middle}
-.pill.due{color:var(--bad);border-color:var(--bad-line);background:var(--bad-bg)}
-.pill.late{color:var(--warn);border-color:var(--warn-line);background:var(--warn-bg)}
-.pill.paid{color:var(--ok);border-color:var(--ok-line);background:var(--ok-bg)}
-.links{border:1px solid var(--line);border-radius:12px;padding:16px}
 .links .k{font:600 11px var(--font);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:6px;margin-bottom:8px}
 .links .k svg{width:14px;height:14px;stroke:var(--ok);fill:none;stroke-width:2}
-.links a{display:flex;justify-content:space-between;align-items:center;padding:7px 0;font-size:15px;gap:10px}
+.links a{display:flex;justify-content:space-between;align-items:center;padding:10px 0;font-size:15px;gap:10px;border-top:1px solid var(--line)}
+.links a:first-of-type{border-top:0}
 .links a svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex:none}
-.links .none{color:var(--muted);font-size:14px}
-
-/* recent */
+.links .d{display:block;font-size:13px;color:var(--muted);font-weight:400}
 .ph2{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:10px;flex-wrap:wrap}
-.clear{background:none;border:0;color:var(--muted);font-size:13px;cursor:pointer;padding:4px}
-.clear:hover{color:var(--fg)}
+.clear{background:none;border:0;color:var(--muted);font-size:13px;cursor:pointer;padding:4px}.clear:hover{color:var(--fg)}
+.empty{color:var(--muted);font-size:14px}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:999px;padding:7px 12px 7px 10px;cursor:pointer;font:600 13px var(--mono);direction:ltr}
 .chip:hover{border-color:var(--accent)}
 .chip .cc{font-size:10px;color:var(--muted)}
 .chip svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2}
-.empty{color:var(--muted);font-size:14px}
-
-/* ledger */
-.ledger{border:1px solid var(--line);border-radius:12px;overflow:hidden}
-.lrow{display:grid;grid-template-columns:auto 1fr auto auto;gap:6px 14px;padding:14px 16px;border-top:1px solid var(--line);align-items:center}
-.lrow:first-child{border-top:0}
-.lrow.paid{opacity:.6}
-.lrow .flag{font:700 11px var(--mono);color:var(--muted);background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:4px 7px;direction:ltr}
-.lrow .t b{font-weight:600}
-.lrow .t .m{font:12px var(--mono);color:var(--muted);display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.lrow .amt{font:700 16px var(--mono);text-align:end;direction:ltr;font-variant-numeric:tabular-nums}
-.lrow .amt small{display:block;font-size:11px;color:var(--muted);font-weight:400}
-.lrow .ops{display:flex;gap:4px}
-.ib{background:none;border:1px solid var(--line-2);border-radius:8px;width:32px;height:32px;display:grid;place-items:center;cursor:pointer;color:var(--muted)}
-.ib:hover{color:var(--fg);border-color:var(--accent)}
-.ib svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2}
-.ib.confirm{color:var(--bad);border-color:var(--bad-line);background:var(--bad-bg);width:auto;padding:0 10px;font:600 12px var(--font)}
-@media (max-width:620px){.lrow{grid-template-columns:auto 1fr;}.lrow .amt{grid-column:2;text-align:start}.lrow .ops{grid-column:1/-1}}
-.filters{display:flex;gap:6px;flex-wrap:wrap}
-.filters button{background:var(--panel-2);border:1px solid var(--line-2);border-radius:999px;padding:5px 12px;font-size:13px;cursor:pointer;color:var(--muted)}
-.filters button[aria-pressed=true]{color:var(--fg);border-color:var(--accent)}
-.chk{display:flex;align-items:center;gap:8px;font-size:14px;cursor:pointer;min-height:46px}
-.chk input{width:18px;height:18px;accent-color:var(--accent)}
-textarea.ctl{min-height:90px;font:12px var(--mono);direction:ltr}
-details.bk{border:1px solid var(--line);border-radius:12px;padding:12px 16px}
-details.bk summary{cursor:pointer;color:var(--muted);font-size:14px}
-details.bk .in{display:grid;gap:10px;margin-top:12px}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:10px;font-weight:600;font-size:14px;z-index:9;transition:opacity .3s;max-width:calc(100% - 32px)}
-
-/* pay */
-.pay-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px}
-@media (max-width:620px){.pay-grid{grid-template-columns:1fr}}
-.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.tag{font-size:13px;background:var(--panel-2);border:1px solid var(--line-2);border-radius:8px;padding:5px 10px}
-.steps{counter-reset:s;display:grid;gap:12px;margin:0;padding:0;list-style:none}
-.steps li{display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start}
-.steps li::before{counter-increment:s;content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:700 13px var(--mono);display:grid;place-items:center}
-.steps b{display:block}
-.steps span{color:var(--muted);font-size:14px}
-
-footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;color:var(--muted);display:grid;gap:10px}
-footer .fx{font:12px var(--mono);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.sim{display:inline-flex;align-items:center;gap:6px;font:700 11px var(--mono);letter-spacing:.1em;color:var(--warn);border:1px solid var(--warn-line);border-radius:6px;padding:3px 8px}
+footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;color:var(--muted)}
+.badge{display:inline-flex;align-items:center;gap:6px;font:700 11px var(--mono);letter-spacing:.1em;color:var(--ok);border:1px solid var(--ok-line);border-radius:6px;padding:3px 8px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 
-<header><div class="wrap">
-  <div class="hd">
-    <div class="logo">P</div>
-    <div class="brand"><b>PlateGuard</b><span data-i="sub"></span></div>
-    <div class="sp"></div>
-    <div class="status"><span class="dot" id="ratedot"></span><span id="ratelbl"></span></div>
-    <div class="clock" id="clock">--:--:-- UTC</div>
-    <div class="langs" id="langs">
-      <button type="button" data-lang="fr">FR</button>
-      <button type="button" data-lang="pt">PT</button>
-      <button type="button" data-lang="en">EN</button>
-      <button type="button" data-lang="ar">AR</button>
-    </div>
+<header><div class="wrap hd">
+  <div class="logo">P</div>
+  <div class="brand"><b>PlateGuard</b><span data-i="sub"></span></div>
+  <div class="sp"></div>
+  <div class="clock" id="clock">--:--:-- UTC</div>
+  <div class="langs" id="langs">
+    <button type="button" data-lang="pt">PT</button>
+    <button type="button" data-lang="fr">FR</button>
+    <button type="button" data-lang="en">EN</button>
+    <button type="button" data-lang="ar">AR</button>
   </div>
-  <nav class="tabs" id="tabs" role="tablist">
-    <button type="button" role="tab" data-tab="check" aria-selected="true"><span data-i="tabCheck"></span></button>
-    <button type="button" role="tab" data-tab="fines"><span data-i="tabFines"></span><span class="cnt" id="finecnt" hidden></span></button>
-    <button type="button" role="tab" data-tab="pay"><span data-i="tabPay"></span></button>
-  </nav>
 </div></header>
 
 <section class="hero"><div class="wrap">
-  <div class="eyebrow"><span data-i="eyebrow"></span> · 2026</div>
+  <div class="eyebrow">PlateGuard · Brasil · 2026</div>
   <h1 id="h1"></h1>
-  <p class="lead" id="lead"></p>
-  <div class="facts" id="facts">
-    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span data-i="f1"></span></span>
-    <span><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i="f2"></span></span>
+  <p class="lead" data-i="lead"></p>
+  <div class="facts">
+    <span><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><span data-i="f1"></span></span>
+    <span><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span data-i="f2"></span></span>
     <span><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span data-i="f3"></span></span>
   </div>
 </div></section>
 
 <main class="wrap">
-
-<!-- ============ VIEW: CHECK ============ -->
-<div class="view" id="view-check">
   <section class="panel">
     <h2><span class="n">01</span><span data-i="console"></span></h2>
     <form id="form" autocomplete="off">
-      <div class="field">
-        <label class="lbl" for="country" data-i="country"></label>
-        <select class="ctl" id="country"></select>
-      </div>
       <div class="row2">
-        <div class="field">
-          <label class="lbl" for="plate" data-i="plate"></label>
-          <input class="ctl plate" id="plate" maxlength="16" spellcheck="false">
-          <div class="hint" id="platehint"></div>
-        </div>
-        <div class="field">
-          <label class="lbl" for="cur" data-i="currency"></label>
-          <select class="ctl" id="cur"></select>
-          <div class="hint" id="curhint"></div>
-        </div>
+        <div class="field"><label class="lbl" for="uf" data-i="uf"></label><select class="ctl" id="uf"></select></div>
+        <div class="field"><label class="lbl" for="plate" data-i="plate"></label><input class="ctl plate" id="plate" maxlength="8" spellcheck="false" placeholder="ABC1D23"><div class="hint" id="platehint"></div></div>
       </div>
-      <div class="pprev" id="preview">
-        <div class="band" id="band"><span id="bandcc">FR</span><small id="bandcur">EUR</small></div>
-        <div class="num ph" id="pnum">AB-123-CD</div>
-      </div>
-      <button class="btn" type="submit" id="go"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span data-i="check"></span></button>
+      <div class="pprev"><div class="top"><span>BRASIL</span>·<span id="pufl">BR</span></div><div class="num ph" id="pnum">ABC1D23</div></div>
+      <button class="btn" type="submit" id="go"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span id="golbl"></span></button>
+      <div class="hint" style="text-align:center;margin-top:10px" data-i="goHint"></div>
     </form>
   </section>
 
-  <section class="panel" id="results" hidden>
-    <h2><span class="n">02</span><span data-i="results"></span></h2>
-    <div id="rbody"></div>
-  </section>
+  <section class="panel links" id="official"></section>
 
   <section class="panel">
     <div class="ph2">
@@ -276,526 +150,100 @@ footer .fx{font:12px var(--mono);display:flex;gap:8px;align-items:center;flex-wr
     </div>
     <div class="chips" id="chips"></div>
   </section>
-</div>
-
-<!-- ============ VIEW: MY FINES ============ -->
-<div class="view" id="view-fines" hidden>
-  <section class="panel">
-    <div class="tiles" id="ftiles"></div>
-    <div class="ph2">
-      <h3><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i="ledger"></span></h3>
-      <div class="filters" id="ffilters">
-        <button type="button" data-f="open" aria-pressed="true" data-i="fOpen"></button>
-        <button type="button" data-f="paid" aria-pressed="false" data-i="fPaid"></button>
-        <button type="button" data-f="all" aria-pressed="false" data-i="fAll"></button>
-      </div>
-    </div>
-    <div class="ledger" id="ledger"></div>
-  </section>
-
-  <section class="panel">
-    <h2 id="fformtitle"><span class="n">+</span><span data-i="addFine"></span></h2>
-    <form id="fform" autocomplete="off">
-      <input type="hidden" id="f-id">
-      <div class="row2">
-        <div class="field"><label class="lbl" for="f-cc" data-i="country"></label><select class="ctl" id="f-cc"></select></div>
-        <div class="field"><label class="lbl" for="f-plate" data-i="plate"></label><input class="ctl plate" id="f-plate" maxlength="16" spellcheck="false"></div>
-      </div>
-      <div class="row3">
-        <div class="field"><label class="lbl" for="f-date" data-i="date"></label><input class="ctl" type="date" id="f-date" required></div>
-        <div class="field"><label class="lbl" for="f-amt" data-i="amount"></label><input class="ctl mono" type="number" id="f-amt" min="0" step="0.01" inputmode="decimal" required placeholder="0.00"></div>
-        <div class="field"><label class="lbl" for="f-cur" data-i="curOf"></label><select class="ctl" id="f-cur"></select></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label class="lbl" for="f-type" data-i="type"></label><select class="ctl" id="f-type"></select></div>
-        <div class="field"><label class="lbl" for="f-ref" data-i="notice"></label><input class="ctl mono" id="f-ref" maxlength="40" spellcheck="false"></div>
-      </div>
-      <div class="row2">
-        <div class="field"><label class="lbl" for="f-due" data-i="due"></label><input class="ctl" type="date" id="f-due"></div>
-        <div class="field"><label class="lbl">&nbsp;</label><label class="chk"><input type="checkbox" id="f-paid"><span data-i="markPaid"></span></label></div>
-      </div>
-      <div class="actions">
-        <button class="btn sm" type="submit" id="fsave"><span data-i="save"></span></button>
-        <button class="btn sm ghost" type="button" id="fcancel" hidden><span data-i="cancel"></span></button>
-      </div>
-    </form>
-  </section>
-
-  <details class="bk">
-    <summary data-i="backup"></summary>
-    <div class="in">
-      <p class="empty" data-i="backupHelp" style="margin:0"></p>
-      <div class="actions">
-        <button class="btn sm ghost" type="button" id="bk-copy"><span data-i="copyBackup"></span></button>
-        <button class="btn sm ghost" type="button" id="bk-import"><span data-i="importBackup"></span></button>
-      </div>
-      <textarea class="ctl" id="bk-text" placeholder='[{"cc":"BR","plate":"ABC1D23","date":"2026-05-01","amount":293.47,"cur":"BRL"}]'></textarea>
-    </div>
-  </details>
-</div>
-
-<!-- ============ VIEW: PAY ============ -->
-<div class="view" id="view-pay" hidden>
-  <section class="panel">
-    <h2><span class="n">€</span><span data-i="payTitle"></span></h2>
-    <div class="field">
-      <label class="lbl" for="p-cc" data-i="country"></label>
-      <select class="ctl" id="p-cc"></select>
-    </div>
-    <div id="paybody"></div>
-  </section>
-  <section class="panel">
-    <h3 style="margin-bottom:14px"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/></svg><span data-i="safeTitle"></span></h3>
-    <ol class="steps" id="safesteps"></ol>
-  </section>
-</div>
-
 </main>
 
-<footer class="wrap">
-  <div><span class="sim">⚠ <span data-i="simtag"></span></span> &nbsp;<span data-i="foot"></span></div>
-  <div class="fx" id="ratesfx"></div>
-</footer>
-<div class="toast" id="toast" hidden></div>
+<footer class="wrap"><span class="badge">✓ <span data-i="realtag"></span></span> &nbsp;<span data-i="foot"></span></footer>
 
 <script>
-/* ============================== i18n ============================== */
 const I18N={
-fr:{sub:"Vérification de véhicules",simtag:"DONNÉES SIMULÉES",eyebrow:"PlateGuard",
-tabCheck:"Vérifier",tabFines:"Mes amendes",tabPay:"Payer",
-h1_check:"Vérifiez si un véhicule <em>a des amendes.</em>",lead_check:"Saisissez une plaque de n'importe quel pays pour une vérification de démonstration, dans la devise de votre choix.",
-h1_fines:"Vos amendes, <em>dans votre devise.</em>",lead_fines:"Enregistrez vos vrais PV, pays par pays, et suivez ce qu'il reste à payer converti dans la devise que vous voulez.",
-h1_pay:"Payer une amende, <em>au bon endroit.</em>",lead_pay:"Portails officiels, pièces à préparer, délais et remises connus, pour chacun des 42 pays couverts.",
-f1:"42 pays couverts",f2:"Vérification de démonstration",f3:"Tout reste dans votre navigateur",
-console:"Console de vérification",country:"Pays d'immatriculation",plate:"Plaque d'immatriculation",currency:"Devise d'affichage",
-auto:"Auto — devise du pays",curAuto:"Suit le pays sélectionné :",curForced:"Devise forcée. Devise locale du pays :",
-fmtOk:"Format attendu :",fmtBad:"Format inhabituel pour ce pays (attendu : {f}). La recherche reste possible.",
-check:"Vérifier le véhicule",checking:"Interrogation du registre…",results:"Résultats du registre",
-okT:"Aucune infraction enregistrée",okP:"Ce véhicule est en règle dans le registre de démonstration.",
-badT:"{n} infraction(s) en attente",badP:"Des amendes impayées sont associées à cette plaque (démonstration).",
-ref:"Réf.",tPlate:"Plaque vérifiée",tTotal:"Total des amendes",tAuth:"Autorité émettrice",none:"Aucune infraction enregistrée",
-inLocal:"soit {x} en devise locale",infrs:"Détail des infractions",date:"Date",status_due:"À PAYER",status_late:"MAJORÉE",status_paid:"PAYÉE",pts:"pt(s)",
-steps:"Démarches officielles",nolinks:"Aucun portail officiel référencé pour ce pays. Rapprochez-vous de l'autorité locale.",goPay:"Voir comment payer",
-recent:"Recherches récentes",clear:"Effacer",norecent:"Aucune recherche pour le moment.",
-ledger:"Registre personnel",fOpen:"À payer",fPaid:"Payées",fAll:"Toutes",noFines:"Aucune amende enregistrée. Ajoutez-en une ci-dessous.",
-tOpen:"Reste à payer",tPaidSum:"Déjà payé",tCount:"Amendes ouvertes",
-addFine:"Ajouter une amende",editFine:"Modifier l'amende",amount:"Montant",curOf:"Devise de l'amende",type:"Motif",notice:"N° d'avis (optionnel)",due:"Échéance (optionnel)",markPaid:"Déjà payée",
-save:"Enregistrer",cancel:"Annuler",saved:"Amende enregistrée",deleted:"Amende supprimée",confirmDel:"Supprimer ?",dueIn:"échéance {d}",overdue:"en retard",
-backup:"Sauvegarde / transfert vers un autre appareil",backupHelp:"Vos amendes sont stockées uniquement dans ce navigateur. Copiez la sauvegarde pour la coller sur un autre appareil.",
-copyBackup:"Copier la sauvegarde",importBackup:"Importer le texte ci-dessous",copied:"Sauvegarde copiée",imported:"{n} amende(s) importée(s)",badJson:"Texte invalide",
-payTitle:"Où et comment payer",authority:"Autorité compétente",level:"Niveau",lvl_national:"National",lvl_state:"Par État / région / émirat",lvl_municipal:"Municipal",
-portals:"Portails officiels",needs:"À préparer",need_plate:"Plaque",need_notice:"N° d'avis / de PV",need_id:"Pièce d'identité",need_card:"Carte bancaire",need_doc:"Carte grise",need_renavam:"RENAVAM",need_citation:"N° de citation",
-methods:"Moyens de paiement",m_card:"Carte en ligne",m_bank:"Virement",m_app:"Application officielle",m_counter:"Guichet / point de vente",
-discount:"Remise paiement rapide",discountV:"−{p}% si payé sous {d} jours",noDiscount:"Pas de remise connue",deadline:"Délai avant majoration",deadlineV:"{d} jours",noDeadline:"Variable",
-caveat:"Vérifiez toujours les montants et délais sur le portail officiel : ils changent et dépendent souvent de l'infraction.",
-safeTitle:"Éviter les arnaques au faux PV",
-safe:[["Payez uniquement sur le domaine officiel","Tapez l'adresse vous-même. Un SMS ou un e-mail avec un lien court est presque toujours une arnaque."],["Retrouvez l'avis par son numéro","Un vrai PV a un numéro que le portail officiel reconnaît. S'il est inconnu, ne payez pas."],["Méfiez-vous de l'urgence","« Payez dans l'heure » n'existe pas. Les vrais délais se comptent en jours ou en semaines."],["Jamais de paiement par virement à un particulier","Les autorités encaissent sur leurs propres comptes ou plateformes, jamais sur un IBAN envoyé par message."]],
-rateLive:"Taux live",rateStatic:"Taux figés",rateSrc_live:"Taux de change live ({s}), {d}",rateSrc_static:"Taux indicatifs figés ({d}). Dans la page hébergée, le réseau est bloqué ; ouvrez le fichier HTML en local pour les taux live.",
-foot:"PlateGuard est une démonstration : aucun registre mondial des amendes n'existe. L'onglet « Vérifier » génère des résultats fictifs. Seules vos saisies dans « Mes amendes » sont réelles, et elles ne quittent pas votre navigateur.",
-types:["Excès de vitesse","Feu rouge grillé","Stationnement interdit","Téléphone au volant","Défaut d'assurance","Contrôle technique expiré","Voie de bus","Péage impayé","Ceinture non attachée","Franchissement de ligne continue","Autre"]},
-
-pt:{sub:"Verificação de veículos",simtag:"DADOS SIMULADOS",eyebrow:"PlateGuard",
-tabCheck:"Verificar",tabFines:"Minhas multas",tabPay:"Pagar",
-h1_check:"Verifique se um veículo <em>tem multas.</em>",lead_check:"Digite uma placa de qualquer país para uma verificação de demonstração, na moeda que preferir.",
-h1_fines:"Suas multas, <em>na sua moeda.</em>",lead_fines:"Registre suas multas reais, país por país, e acompanhe o que falta pagar convertido na moeda que quiser.",
-h1_pay:"Pagar uma multa, <em>no lugar certo.</em>",lead_pay:"Portais oficiais, documentos necessários, prazos e descontos conhecidos, para cada um dos 42 países.",
-f1:"42 países cobertos",f2:"Verificação de demonstração",f3:"Tudo fica no seu navegador",
-console:"Console de verificação",country:"País de registro",plate:"Placa do veículo",currency:"Moeda de exibição",
-auto:"Auto — moeda do país",curAuto:"Segue o país selecionado:",curForced:"Moeda fixada. Moeda local do país:",
-fmtOk:"Formato esperado:",fmtBad:"Formato incomum para este país (esperado: {f}). A busca continua possível.",
-check:"Verificar veículo",checking:"Consultando o registro…",results:"Resultados do registro",
-okT:"Nenhuma infração registrada",okP:"Este veículo está regular no registro de demonstração.",
-badT:"{n} infração(ões) pendente(s)",badP:"Há multas não pagas associadas a esta placa (demonstração).",
-ref:"Ref.",tPlate:"Placa verificada",tTotal:"Total de multas",tAuth:"Autoridade emissora",none:"Nenhuma infração registrada",
-inLocal:"ou {x} na moeda local",infrs:"Detalhe das infrações",date:"Data",status_due:"A PAGAR",status_late:"COM ACRÉSCIMO",status_paid:"PAGA",pts:"pt(s)",
-steps:"Serviços oficiais",nolinks:"Nenhum portal oficial referenciado para este país. Consulte a autoridade local.",goPay:"Ver como pagar",
-recent:"Buscas recentes",clear:"Limpar",norecent:"Nenhuma busca ainda.",
-ledger:"Registro pessoal",fOpen:"A pagar",fPaid:"Pagas",fAll:"Todas",noFines:"Nenhuma multa registrada. Adicione uma abaixo.",
-tOpen:"Falta pagar",tPaidSum:"Já pago",tCount:"Multas em aberto",
-addFine:"Adicionar multa",editFine:"Editar multa",amount:"Valor",curOf:"Moeda da multa",type:"Motivo",notice:"Nº do auto (opcional)",due:"Vencimento (opcional)",markPaid:"Já paga",
-save:"Salvar",cancel:"Cancelar",saved:"Multa salva",deleted:"Multa excluída",confirmDel:"Excluir?",dueIn:"vence {d}",overdue:"vencida",
-backup:"Backup / transferir para outro aparelho",backupHelp:"Suas multas ficam apenas neste navegador. Copie o backup para colar em outro aparelho.",
-copyBackup:"Copiar backup",importBackup:"Importar o texto abaixo",copied:"Backup copiado",imported:"{n} multa(s) importada(s)",badJson:"Texto inválido",
-payTitle:"Onde e como pagar",authority:"Autoridade competente",level:"Nível",lvl_national:"Nacional",lvl_state:"Por estado / região / emirado",lvl_municipal:"Municipal",
-portals:"Portais oficiais",needs:"Tenha em mãos",need_plate:"Placa",need_notice:"Nº do auto / notificação",need_id:"Documento de identidade",need_card:"Cartão",need_doc:"CRLV",need_renavam:"RENAVAM",need_citation:"Nº da citação",
-methods:"Formas de pagamento",m_card:"Cartão online",m_bank:"Transferência / boleto",m_app:"Aplicativo oficial",m_counter:"Guichê / lotérica",
-discount:"Desconto por pagamento rápido",discountV:"−{p}% se pago em {d} dias",noDiscount:"Sem desconto conhecido",deadline:"Prazo antes do acréscimo",deadlineV:"{d} dias",noDeadline:"Variável",
-caveat:"Confirme sempre valores e prazos no portal oficial: eles mudam e dependem da infração.",
-safeTitle:"Evitar golpes de multa falsa",
-safe:[["Pague só no domínio oficial","Digite o endereço você mesmo. SMS ou e-mail com link curto é quase sempre golpe."],["Localize o auto pelo número","Uma multa real tem um número que o portal oficial reconhece. Se não reconhecer, não pague."],["Desconfie da urgência","« Pague em uma hora » não existe. Prazos reais são em dias ou semanas."],["Nunca Pix ou transferência para pessoa física","Autoridades recebem nas próprias plataformas, nunca numa chave enviada por mensagem."]],
-rateLive:"Câmbio ao vivo",rateStatic:"Câmbio fixo",rateSrc_live:"Câmbio ao vivo ({s}), {d}",rateSrc_static:"Taxas indicativas fixas ({d}). Na página hospedada a rede é bloqueada; abra o arquivo HTML localmente para taxas ao vivo.",
-foot:"PlateGuard é uma demonstração: não existe registro mundial de multas. A aba « Verificar » gera resultados fictícios. Só o que você digita em « Minhas multas » é real, e não sai do seu navegador.",
-types:["Excesso de velocidade","Avanço de sinal vermelho","Estacionamento proibido","Celular ao volante","Sem seguro","Vistoria vencida","Faixa de ônibus","Pedágio não pago","Sem cinto","Ultrapassagem em faixa contínua","Outro"]},
-
-en:{sub:"Vehicle verification",simtag:"SIMULATED DATA",eyebrow:"PlateGuard",
-tabCheck:"Check",tabFines:"My fines",tabPay:"Pay",
-h1_check:"Check whether a vehicle <em>has fines.</em>",lead_check:"Enter a plate from any country for a demonstration lookup, in the currency of your choice.",
-h1_fines:"Your fines, <em>in your currency.</em>",lead_fines:"Record your real tickets, country by country, and track what is left to pay converted into any currency.",
-h1_pay:"Pay a fine <em>in the right place.</em>",lead_pay:"Official portals, what to have ready, known deadlines and discounts, for each of the 42 countries.",
-f1:"42 countries covered",f2:"Demonstration lookup",f3:"Everything stays in your browser",
-console:"Verification console",country:"Country of registration",plate:"Licence plate",currency:"Display currency",
-auto:"Auto — country currency",curAuto:"Follows the selected country:",curForced:"Currency pinned. Local currency of the country:",
-fmtOk:"Expected format:",fmtBad:"Unusual format for this country (expected: {f}). You can still search.",
-check:"Check vehicle",checking:"Querying registry…",results:"Registry results",
-okT:"No infraction on record",okP:"This vehicle is clear in the demonstration registry.",
-badT:"{n} pending infraction(s)",badP:"Unpaid fines are attached to this plate (demonstration).",
-ref:"Ref.",tPlate:"Plate checked",tTotal:"Total fines",tAuth:"Issuing authority",none:"No infraction on record",
-inLocal:"i.e. {x} in local currency",infrs:"Infraction details",date:"Date",status_due:"DUE",status_late:"SURCHARGED",status_paid:"PAID",pts:"pt(s)",
-steps:"Official services",nolinks:"No official portal referenced for this country. Contact the local authority.",goPay:"See how to pay",
-recent:"Recent searches",clear:"Clear",norecent:"No searches yet.",
-ledger:"Personal ledger",fOpen:"Open",fPaid:"Paid",fAll:"All",noFines:"No fines recorded. Add one below.",
-tOpen:"Left to pay",tPaidSum:"Already paid",tCount:"Open fines",
-addFine:"Add a fine",editFine:"Edit fine",amount:"Amount",curOf:"Fine currency",type:"Reason",notice:"Notice no. (optional)",due:"Due date (optional)",markPaid:"Already paid",
-save:"Save",cancel:"Cancel",saved:"Fine saved",deleted:"Fine deleted",confirmDel:"Delete?",dueIn:"due {d}",overdue:"overdue",
-backup:"Backup / move to another device",backupHelp:"Your fines are stored only in this browser. Copy the backup to paste it on another device.",
-copyBackup:"Copy backup",importBackup:"Import the text below",copied:"Backup copied",imported:"{n} fine(s) imported",badJson:"Invalid text",
-payTitle:"Where and how to pay",authority:"Competent authority",level:"Level",lvl_national:"National",lvl_state:"Per state / region / emirate",lvl_municipal:"Municipal",
-portals:"Official portals",needs:"Have ready",need_plate:"Plate",need_notice:"Notice / ticket no.",need_id:"ID document",need_card:"Bank card",need_doc:"Registration document",need_renavam:"RENAVAM",need_citation:"Citation no.",
-methods:"Payment methods",m_card:"Card online",m_bank:"Bank transfer",m_app:"Official app",m_counter:"Counter / retail",
-discount:"Early-payment discount",discountV:"−{p}% if paid within {d} days",noDiscount:"No known discount",deadline:"Deadline before surcharge",deadlineV:"{d} days",noDeadline:"Varies",
-caveat:"Always confirm amounts and deadlines on the official portal: they change and often depend on the offence.",
-safeTitle:"Avoid fake-fine scams",
-safe:[["Pay only on the official domain","Type the address yourself. A text or e-mail with a short link is almost always a scam."],["Look the notice up by its number","A real ticket has a number the official portal recognises. If it does not, do not pay."],["Distrust urgency","« Pay within the hour » does not exist. Real deadlines are days or weeks."],["Never transfer to a private account","Authorities collect on their own platforms, never on an IBAN sent by message."]],
-rateLive:"Live rates",rateStatic:"Fixed rates",rateSrc_live:"Live exchange rates ({s}), {d}",rateSrc_static:"Indicative fixed rates ({d}). The hosted page blocks network access; open the HTML file locally for live rates.",
-foot:"PlateGuard is a demonstration: no world fines registry exists. The « Check » tab generates fictional results. Only what you enter under « My fines » is real, and it never leaves your browser.",
-types:["Speeding","Red light","Illegal parking","Phone while driving","No insurance","Inspection expired","Bus lane","Unpaid toll","Seatbelt not worn","Crossing a solid line","Other"]},
-
-ar:{sub:"التحقق من المركبات",simtag:"بيانات تجريبية",eyebrow:"PlateGuard",
-tabCheck:"تحقق",tabFines:"مخالفاتي",tabPay:"الدفع",
-h1_check:"تحقق مما إذا كانت المركبة <em>عليها مخالفات.</em>",lead_check:"أدخل رقم لوحة من أي دولة لإجراء فحص تجريبي، بالعملة التي تختارها.",
-h1_fines:"مخالفاتك، <em>بعملتك.</em>",lead_fines:"سجّل مخالفاتك الحقيقية دولةً بدولة، وتابع المتبقي للدفع محوّلاً إلى أي عملة تريدها.",
-h1_pay:"ادفع المخالفة <em>في المكان الصحيح.</em>",lead_pay:"البوابات الرسمية، المستندات المطلوبة، المهل والخصومات المعروفة، لكل دولة من الدول الـ42.",
-f1:"42 دولة مشمولة",f2:"فحص تجريبي",f3:"كل شيء يبقى في متصفحك",
-console:"لوحة التحقق",country:"دولة التسجيل",plate:"رقم اللوحة",currency:"عملة العرض",
-auto:"تلقائي — عملة الدولة",curAuto:"تتبع الدولة المختارة:",curForced:"العملة مثبّتة. العملة المحلية للدولة:",
-fmtOk:"الصيغة المتوقعة:",fmtBad:"صيغة غير معتادة لهذه الدولة (المتوقع: {f}). يمكنك المتابعة.",
-check:"تحقق من المركبة",checking:"جارٍ الاستعلام…",results:"نتائج السجل",
-okT:"لا توجد مخالفات مسجلة",okP:"هذه المركبة سليمة في السجل التجريبي.",
-badT:"{n} مخالفة معلّقة",badP:"توجد غرامات غير مدفوعة مرتبطة بهذه اللوحة (تجريبي).",
-ref:"مرجع",tPlate:"اللوحة المفحوصة",tTotal:"إجمالي الغرامات",tAuth:"الجهة المصدرة",none:"لا توجد مخالفات مسجلة",
-inLocal:"أي {x} بالعملة المحلية",infrs:"تفاصيل المخالفات",date:"التاريخ",status_due:"مستحقة",status_late:"مع زيادة",status_paid:"مدفوعة",pts:"نقطة",
-steps:"الخدمات الرسمية",nolinks:"لا توجد بوابة رسمية مرجعية لهذه الدولة. راجع الجهة المحلية.",goPay:"كيف أدفع",
-recent:"عمليات البحث الأخيرة",clear:"مسح",norecent:"لا توجد عمليات بحث بعد.",
-ledger:"السجل الشخصي",fOpen:"مستحقة",fPaid:"مدفوعة",fAll:"الكل",noFines:"لا توجد مخالفات مسجلة. أضف واحدة أدناه.",
-tOpen:"المتبقي للدفع",tPaidSum:"المدفوع",tCount:"مخالفات مفتوحة",
-addFine:"إضافة مخالفة",editFine:"تعديل المخالفة",amount:"المبلغ",curOf:"عملة المخالفة",type:"السبب",notice:"رقم الإشعار (اختياري)",due:"تاريخ الاستحقاق (اختياري)",markPaid:"مدفوعة مسبقاً",
-save:"حفظ",cancel:"إلغاء",saved:"تم حفظ المخالفة",deleted:"تم حذف المخالفة",confirmDel:"حذف؟",dueIn:"تستحق {d}",overdue:"متأخرة",
-backup:"نسخة احتياطية / نقل إلى جهاز آخر",backupHelp:"تُحفظ مخالفاتك في هذا المتصفح فقط. انسخ النسخة الاحتياطية للصقها على جهاز آخر.",
-copyBackup:"نسخ النسخة الاحتياطية",importBackup:"استيراد النص أدناه",copied:"تم النسخ",imported:"تم استيراد {n} مخالفة",badJson:"نص غير صالح",
-payTitle:"أين وكيف تدفع",authority:"الجهة المختصة",level:"المستوى",lvl_national:"وطني",lvl_state:"حسب الولاية / المنطقة / الإمارة",lvl_municipal:"بلدي",
-portals:"البوابات الرسمية",needs:"جهّز",need_plate:"اللوحة",need_notice:"رقم الإشعار / المخالفة",need_id:"هوية",need_card:"بطاقة بنكية",need_doc:"ملكية المركبة",need_renavam:"RENAVAM",need_citation:"رقم الاستدعاء",
-methods:"طرق الدفع",m_card:"بطاقة عبر الإنترنت",m_bank:"تحويل بنكي",m_app:"التطبيق الرسمي",m_counter:"مركز خدمة / نقطة بيع",
-discount:"خصم الدفع المبكر",discountV:"−{p}% عند الدفع خلال {d} يوماً",noDiscount:"لا يوجد خصم معروف",deadline:"المهلة قبل الزيادة",deadlineV:"{d} يوماً",noDeadline:"متغيرة",
-caveat:"تحقق دائماً من المبالغ والمهل على البوابة الرسمية: فهي تتغير وتعتمد غالباً على نوع المخالفة.",
-safeTitle:"تجنّب احتيال المخالفات الوهمية",
-safe:[["ادفع فقط على النطاق الرسمي","اكتب العنوان بنفسك. الرسائل النصية أو البريد مع رابط مختصر غالباً احتيال."],["ابحث عن المخالفة برقمها","المخالفة الحقيقية لها رقم تتعرف عليه البوابة الرسمية. إن لم تتعرف عليه فلا تدفع."],["لا تثق بالاستعجال","«ادفع خلال ساعة» غير موجود. المهل الحقيقية بالأيام أو الأسابيع."],["لا تحوّل أبداً إلى حساب شخصي","الجهات الرسمية تحصّل عبر منصاتها فقط، وليس عبر آيبان مرسل برسالة."]],
-rateLive:"أسعار مباشرة",rateStatic:"أسعار ثابتة",rateSrc_live:"أسعار صرف مباشرة ({s})، {d}",rateSrc_static:"أسعار إرشادية ثابتة ({d}). الصفحة المستضافة تحجب الشبكة؛ افتح ملف HTML محلياً للأسعار المباشرة.",
-foot:"PlateGuard عرض تجريبي: لا يوجد سجل عالمي للمخالفات. تبويب «تحقق» يولّد نتائج وهمية. ما تدخله في «مخالفاتي» فقط حقيقي، ولا يغادر متصفحك.",
-types:["تجاوز السرعة","قطع الإشارة الحمراء","وقوف ممنوع","الهاتف أثناء القيادة","بدون تأمين","انتهاء الفحص الدوري","مسار الحافلات","رسوم طريق غير مدفوعة","عدم ربط الحزام","تجاوز الخط المتصل","أخرى"]}
+pt:{sub:"Consulta de multas · Brasil",realtag:"SEM DADOS INVENTADOS",
+h1:"Consulte suas multas <em>na fonte oficial.</em>",lead:"Escolha o estado e digite a placa: o PlateGuard abre a consulta oficial do DETRAN. Tenha o RENAVAM (no CRLV) à mão — a maioria dos estados pede placa + RENAVAM.",
+f1:"Somente fontes oficiais",f2:"26 estados + Distrito Federal",f3:"Nada é enviado nem guardado por nós",
+console:"Consulta oficial",uf:"Estado de registro (UF)",plate:"Placa",
+fmtOk:"Formato Mercosul ABC1D23 ou antigo ABC1234",fmtBad:"Placa fora do padrão brasileiro (esperado ABC1D23 ou ABC1234).",
+go:"Consultar no DETRAN-{uf}",goHint:"Abre o site oficial em nova aba.",
+official:"Outras fontes oficiais",cdt:"Carteira Digital de Trânsito",cdtD:"Todas as suas multas, em qualquer estado, com 40% de desconto via SNE",senatran:"Senatran — Portal de Serviços",senatranD:"Infrações e pontos na CNH, com login gov.br",
+recent:"Consultas recentes",clear:"Limpar",norecent:"Nenhuma consulta ainda.",
+foot:"O PlateGuard não consulta multas por conta própria: ele leva você à fonte oficial. Nenhum resultado é gerado ou estimado."},
+fr:{sub:"Consultation d'amendes · Brésil",realtag:"AUCUNE DONNÉE INVENTÉE",
+h1:"Consultez vos amendes <em>à la source officielle.</em>",lead:"Choisissez l'État et tapez la plaque : PlateGuard ouvre la consultation officielle du DETRAN. Gardez le RENAVAM (sur le CRLV) sous la main : la plupart des États demandent plaque + RENAVAM.",
+f1:"Sources officielles uniquement",f2:"26 États + District fédéral",f3:"Rien n'est envoyé ni stocké par nous",
+console:"Consultation officielle",uf:"État d'immatriculation (UF)",plate:"Plaque",
+fmtOk:"Format Mercosul ABC1D23 ou ancien ABC1234",fmtBad:"Plaque hors format brésilien (attendu ABC1D23 ou ABC1234).",
+go:"Consulter sur DETRAN-{uf}",goHint:"Ouvre le site officiel dans un nouvel onglet.",
+official:"Autres sources officielles",cdt:"Carteira Digital de Trânsito",cdtD:"Toutes vos amendes, tous États confondus, avec 40 % de remise via SNE",senatran:"Senatran — Portail de services",senatranD:"Infractions et points sur le permis, avec login gov.br",
+recent:"Consultations récentes",clear:"Effacer",norecent:"Aucune consultation pour le moment.",
+foot:"PlateGuard ne consulte pas les amendes lui-même : il vous amène à la source officielle. Aucun résultat n'est généré ni estimé."},
+en:{sub:"Fine lookup · Brazil",realtag:"NO INVENTED DATA",
+h1:"Check your fines <em>at the official source.</em>",lead:"Pick the state and type the plate: PlateGuard opens the official DETRAN lookup. Keep the RENAVAM (on the CRLV) handy; most states ask for plate + RENAVAM.",
+f1:"Official sources only",f2:"26 states + Federal District",f3:"Nothing is sent or stored by us",
+console:"Official lookup",uf:"State of registration (UF)",plate:"Plate",
+fmtOk:"Mercosul format ABC1D23 or legacy ABC1234",fmtBad:"Plate outside the Brazilian format (expected ABC1D23 or ABC1234).",
+go:"Check at DETRAN-{uf}",goHint:"Opens the official site in a new tab.",
+official:"Other official sources",cdt:"Carteira Digital de Trânsito",cdtD:"All your fines, in any state, with 40% off via SNE",senatran:"Senatran — Services portal",senatranD:"Offences and licence points, with gov.br login",
+recent:"Recent lookups",clear:"Clear",norecent:"No lookups yet.",
+foot:"PlateGuard does not look up fines itself: it takes you to the official source. No result is generated or estimated."},
+ar:{sub:"الاستعلام عن المخالفات · البرازيل",realtag:"بدون بيانات مختلقة",
+h1:"استعلم عن مخالفاتك <em>من المصدر الرسمي.</em>",lead:"اختر الولاية وأدخل اللوحة: يفتح PlateGuard استعلام DETRAN الرسمي. احتفظ برقم RENAVAM (في وثيقة CRLV) فمعظم الولايات تطلب اللوحة + RENAVAM.",
+f1:"مصادر رسمية فقط",f2:"26 ولاية + المقاطعة الفيدرالية",f3:"لا نرسل ولا نخزن شيئاً",
+console:"الاستعلام الرسمي",uf:"ولاية التسجيل (UF)",plate:"اللوحة",
+fmtOk:"صيغة Mercosul ABC1D23 أو القديمة ABC1234",fmtBad:"اللوحة خارج الصيغة البرازيلية (المتوقع ABC1D23 أو ABC1234).",
+go:"استعلم في DETRAN-{uf}",goHint:"يفتح الموقع الرسمي في تبويب جديد.",
+official:"مصادر رسمية أخرى",cdt:"Carteira Digital de Trânsito",cdtD:"كل مخالفاتك في أي ولاية، مع خصم 40% عبر SNE",senatran:"Senatran — بوابة الخدمات",senatranD:"المخالفات ونقاط الرخصة، بتسجيل دخول gov.br",
+recent:"الاستعلامات الأخيرة",clear:"مسح",norecent:"لا توجد استعلامات بعد.",
+foot:"لا يستعلم PlateGuard عن المخالفات بنفسه: بل يأخذك إلى المصدر الرسمي. لا تُولَّد أي نتيجة ولا تُقدَّر."}
 };
-const LOCALE={fr:"fr-FR",pt:"pt-BR",en:"en-GB",ar:"ar-AE"};
-
-/* ============================== rates ============================== */
-const STATIC_RATES={EUR:1,USD:1.17,GBP:.87,CHF:.93,PLN:4.27,SEK:11.0,NOK:11.7,TRY:48.5,CAD:1.62,MXN:21.5,BRL:6.25,ARS:1650,CNY:8.35,JPY:173,INR:103,RUB:97,AED:4.30,SAR:4.39,QAR:4.26,KWD:.36,OMR:.45,BHD:.44,SGD:1.51,MYR:4.93,THB:38,PHP:68,MAD:10.6,DZD:152,TND:3.42,EGP:56,ZAR:20.3,KES:151,NGN:1750,AUD:1.77,NZD:2.03};
-const STATIC_DATE="2026-10";
-const USD_PEG={AED:3.6725,SAR:3.75,QAR:3.64,OMR:.3845,BHD:.376};
-let RATES={...STATIC_RATES}, rateInfo={live:false,date:STATIC_DATE};
-async function loadRates(){
-  const get=async u=>{const ctl=new AbortController();const t=setTimeout(()=>ctl.abort(),5000);try{const r=await fetch(u,{signal:ctl.signal});if(!r.ok)throw 0;return await r.json()}finally{clearTimeout(t)}};
-  try{
-    const j=await get("https://open.er-api.com/v6/latest/EUR"); if(!j||j.result!=="success"||!j.rates||!j.rates.USD)throw 0;
-    const n={...STATIC_RATES}; for(const k in n)if(j.rates[k])n[k]=j.rates[k];
-    let d=STATIC_DATE; try{d=new Date(j.time_last_update_utc).toISOString().slice(0,10)}catch(e){}
-    RATES=n; rateInfo={live:true,date:d,src:"ExchangeRate-API"};
-  }catch(e){
-    try{
-      const j=await get("https://api.frankfurter.dev/v1/latest?base=EUR"); if(!j||!j.rates||!j.rates.USD)throw 0;
-      const n={...STATIC_RATES}; for(const k in j.rates)if(k in n)n[k]=j.rates[k]; for(const k in USD_PEG)n[k]=j.rates.USD*USD_PEG[k];
-      RATES=n; rateInfo={live:true,date:j.date,src:"BCE / Frankfurter"};
-    }catch(e2){ RATES={...STATIC_RATES}; rateInfo={live:false,date:STATIC_DATE}; }
-  }
-  renderRateStatus(); if(lastResult)renderResult(lastResult); renderLedger();
-}
-function renderRateStatus(){
-  $("ratedot").className="dot"+(rateInfo.live?" ok":""); $("ratelbl").textContent=rateInfo.live?T("rateLive"):T("rateStatic");
-  $("ratesfx").textContent=(rateInfo.live?T("rateSrc_live"):T("rateSrc_static")).replace("{d}",rateInfo.date).replace("{s}",rateInfo.src||"");
-}
-
-/* ============================== countries ============================== */
-const EU="#1d3fb8";
-// cc, currency, placeholder, band colour, authority, regex (null = free), pay info
-const PAY=(level,links,needs,methods,disc,dl)=>({level,links,needs,methods,disc,dl});
-const C=[
-["FR","EUR","AB-123-CD",EU,"ANTAI",/^[A-Z]{2}-?\d{3}-?[A-Z]{2}$/,PAY("national",[["amendes.gouv.fr","https://www.amendes.gouv.fr"],["ANTAI — dossier d'infraction","https://www.antai.gouv.fr"]],["notice","card"],["card","app","counter"],[null,15],45)],
-["DE","EUR","B-AB 1234",EU,"Bußgeldstelle / KBA",/^[A-ZÄÖÜ]{1,3}-?[A-Z]{1,2} ?\d{1,4}[EH]?$/,PAY("state",[],["notice","id"],["bank"],null,14)],
-["ES","EUR","1234 BCD",EU,"DGT",/^\d{4} ?[A-Z]{3}$/,PAY("national",[["DGT — Sede electrónica","https://sede.dgt.gob.es"]],["notice","id","card"],["card","bank"],[50,20],null)],
-["IT","EUR","AB 123 CD",EU,"Polizia Locale / Prefettura",/^[A-Z]{2} ?\d{3} ?[A-Z]{2}$/,PAY("municipal",[["pagoPA","https://www.pagopa.gov.it"]],["notice","card"],["card","app","counter"],[30,5],60)],
-["GB","GBP","AB12 CDE","#1d3fb8","Local council / Police",/^[A-Z]{2}\d{2} ?[A-Z]{3}$/,PAY("municipal",[["GOV.UK — Pay a PCN","https://www.gov.uk/pay-parking-ticket"]],["notice","plate","card"],["card"],[50,14],28)],
-["IE","EUR","231-D-12345",EU,"An Garda Síochána",/^\d{2,3}-?[A-Z]{1,2}-?\d{1,6}$/,PAY("national",[["Garda — Fixed Charge Notice","https://www.garda.ie"]],["notice","card"],["card","counter"],null,28)],
-["BE","EUR","1-ABC-123",EU,"Police fédérale / Justice",/^[1-9]-?[A-Z]{3}-?\d{3}$/,PAY("national",[["Justpay","https://www.justpay.be"]],["notice","card"],["card","bank"],null,null)],
-["NL","EUR","AB-123-C",EU,"CJIB",/^[A-Z0-9]{2}-?[A-Z0-9]{2,3}-?[A-Z0-9]{1,2}$/,PAY("national",[["CJIB","https://www.cjib.nl"]],["notice","id"],["card","bank"],null,56)],
-["PT","EUR","AB-12-CD",EU,"ANSR",/^[A-Z0-9]{2}-?[A-Z0-9]{2}-?[A-Z0-9]{2}$/,PAY("national",[["ANSR — Contraordenações","https://www.ansr.pt"]],["notice","id"],["bank","counter"],null,15)],
-["CH","CHF","ZH 123456","#c8102e","Police cantonale",/^[A-Z]{2} ?\d{1,6}$/,PAY("state",[],["notice"],["bank","card"],null,30)],
-["PL","PLN","WA 12345",EU,"Policja / CANARD",/^[A-Z]{2,3} ?[A-Z0-9]{4,5}$/,PAY("national",[],["notice","id"],["bank","card"],null,7)],
-["SE","SEK","ABC 123",EU,"Polisen / Transportstyrelsen",/^[A-Z]{3} ?\d{2}[A-Z0-9]$/,PAY("national",[["Transportstyrelsen","https://www.transportstyrelsen.se"]],["notice"],["bank"],null,30)],
-["NO","NOK","AB 12345","#1d3fb8","Statens innkrevingssentral",/^[A-Z]{2} ?\d{4,5}$/,PAY("national",[["Statens innkrevingssentral","https://www.sismo.no"]],["notice"],["bank"],null,null)],
-["TR","TRY","34 ABC 123","#1d3fb8","Emniyet Genel Müdürlüğü",/^\d{2} ?[A-Z]{1,3} ?\d{2,4}$/,PAY("national",[["e-Devlet","https://www.turkiye.gov.tr"]],["plate","id","card"],["card","app","bank"],[25,15],30)],
-["US","USD","ABC 1234","#1b2a4a","State DMV / County court",/^[A-Z0-9]{2,8}$/,PAY("state",[],["citation","card"],["card","counter"],null,null)],
-["CA","CAD","ABCD 123","#1b2a4a","Provincial ministry / Municipality",/^[A-Z0-9]{2,8}$/,PAY("state",[],["notice","card"],["card","counter"],null,null)],
-["MX","MXN","ABC-123-D","#0b5d3b","Secretaría de Movilidad (estado)",/^[A-Z0-9-]{5,9}$/,PAY("state",[],["plate","card"],["card","counter"],null,null)],
-["BR","BRL","ABC1D23","#0b3b8c","DETRAN (por estado)",/^[A-Z]{3}[- ]?\d[A-Z0-9]\d{2}$/,PAY("state",[["Senatran — Infrações","https://www.gov.br/transito"],["Carteira Digital de Trânsito (SNE)","https://www.gov.br/pt-br/apps/carteira-digital-de-transito"]],["plate","renavam","notice"],["app","bank","card"],[40,null],30)],
-["AR","ARS","AB 123 CD","#0b3b8c","Municipio / Provincia",/^([A-Z]{3} ?\d{3}|[A-Z]{2} ?\d{3} ?[A-Z]{2})$/,PAY("state",[],["plate","id"],["card","counter"],null,null)],
-["CN","CNY","京A·12345","#1d3fb8","公安交管 (交管12123)",null,PAY("national",[],["plate","id"],["app","bank"],null,15)],
-["JP","JPY","品川 300 あ 12-34","#2b2b2b","警察庁",null,PAY("national",[],["notice"],["counter","bank"],null,null)],
-["IN","INR","MH 12 AB 1234","#2b2b2b","RTO / Traffic Police",/^[A-Z]{2} ?\d{1,2} ?[A-Z]{1,3} ?\d{4}$/,PAY("state",[["Parivahan e-Challan","https://echallan.parivahan.gov.in"]],["plate","notice"],["card","app"],null,null)],
-["RU","RUB","А123ВС 77","#2b2b2b","ГИБДД",/^[АВЕКМНОРСТУХABEKMHOPCTYX]\d{3}[АВЕКМНОРСТУХABEKMHOPCTYX]{2} ?\d{2,3}$/,PAY("national",[["Госуслуги","https://www.gosuslugi.ru"]],["notice","id"],["app","card","bank"],[25,30],60)],
-["AE","AED","A 12345","#0b3b8c","Dubai Police / RTA / Abu Dhabi Police",/^([A-Z]{1,2} ?)?\d{1,5}$/,PAY("state",[["Dubai Police — Fines","https://www.dubaipolice.gov.ae"],["RTA Dubai","https://www.rta.ae"],["Abu Dhabi Police","https://www.adpolice.gov.ae"]],["plate","id","card"],["app","card","counter"],[25,60],null)],
-["SA","SAR","ABC 1234","#0b6b3a","MOI — Absher / Efaa",/^[A-Z]{3} ?\d{1,4}$/,PAY("national",[["Absher","https://www.absher.sa"]],["id","card"],["app","bank"],[25,30],null)],
-["QA","QAR","123456","#7a1030","MOI — Metrash",/^\d{1,6}$/,PAY("national",[["Metrash","https://portal.moi.gov.qa"]],["plate","id","card"],["app","card"],null,null)],
-["KW","KWD","12 34567","#0b6b3a","MOI Kuwait — Sahel",/^\d{1,2} ?\d{3,5}$/,PAY("national",[["MOI Kuwait","https://www.moi.gov.kw"]],["id","card"],["app","card"],null,null)],
-["OM","OMR","1234 AB","#c8102e","Royal Oman Police",/^\d{1,5} ?[A-Z]{1,2}$/,PAY("national",[["ROP","https://www.rop.gov.om"]],["plate","id","card"],["app","card"],null,null)],
-["BH","BHD","123456","#c8102e","GDT Bahrain",/^\d{1,6}$/,PAY("national",[["eTraffic Bahrain","https://www.traffic.gov.bh"]],["plate","id","card"],["app","card"],null,null)],
-["SG","SGD","SBA 1234 A","#2b2b2b","Traffic Police / LTA / HDB",/^S[A-Z]{2} ?\d{1,4} ?[A-Z]$/,PAY("national",[["Singapore Police Force","https://www.police.gov.sg"],["LTA","https://www.lta.gov.sg"]],["notice","plate","card"],["card","app","counter"],null,28)],
-["MY","MYR","ABC 1234","#2b2b2b","PDRM / JPJ",/^[A-Z]{1,3} ?\d{1,4} ?[A-Z]?$/,PAY("national",[["MyBayar Saman (PDRM)","https://mybayarsaman.rmp.gov.my"],["JPJ","https://www.jpj.gov.my"]],["plate","id","card"],["app","card","counter"],null,null)],
-["TH","THB","1กข 1234","#1d3fb8","Royal Thai Police",null,PAY("national",[],["notice","plate"],["counter","app","bank"],null,null)],
-["PH","PHP","ABC 1234","#0b5d3b","LTO / MMDA",/^[A-Z]{3} ?\d{3,4}$/,PAY("state",[["LTO","https://lto.gov.ph"]],["notice","id"],["counter","card"],null,null)],
-["MA","MAD","12345-A-6","#c8102e","DGSN / NARSA",/^\d{1,5}-?[A-Z]-?\d{1,2}$/,PAY("national",[],["notice","id"],["counter","bank"],null,null)],
-["DZ","DZD","12345 123 16","#0b6b3a","DGSN",/^\d{5,6} ?\d{3} ?\d{2}$/,PAY("national",[],["notice","id"],["counter"],null,null)],
-["TN","TND","123 TU 4567","#c8102e","Garde nationale / Police",/^\d{1,3} ?TU ?\d{1,4}$/,PAY("national",[],["notice","id"],["counter"],null,null)],
-["EG","EGP","ABC 123","#1b2a4a","وزارة الداخلية — المرور",null,PAY("national",[],["plate","id"],["counter","app"],null,null)],
-["ZA","ZAR","CA 123-456","#0b6b3a","RTIA / Municipality (AARTO)",null,PAY("municipal",[["AARTO","https://www.aarto.gov.za"]],["notice","id","card"],["card","counter"],[50,32],null)],
-["KE","KES","KAA 123A","#1b2a4a","NTSA",/^K[A-Z]{2} ?\d{3}[A-Z]$/,PAY("national",[["eCitizen","https://www.ecitizen.go.ke"],["NTSA","https://www.ntsa.go.ke"]],["plate","id"],["app","card"],null,null)],
-["NG","NGN","ABC-123-DE","#0b6b3a","FRSC",/^[A-Z]{3}-?\d{3}-?[A-Z]{2}$/,PAY("national",[["FRSC","https://frsc.gov.ng"]],["notice","plate"],["bank","card"],null,null)],
-["AU","AUD","ABC 123","#1b2a4a","State revenue office",/^[A-Z0-9]{2,7}$/,PAY("state",[],["notice","card"],["card","bank","counter"],null,28)],
-["NZ","NZD","ABC123","#1b2a4a","NZ Police / Waka Kotahi",/^[A-Z0-9]{1,6}$/,PAY("national",[["NZ Police — Pay an infringement","https://www.police.govt.nz"]],["notice","card"],["card","bank"],null,28)]
-].map(([cc,cur,ph,band,auth,re,pay])=>({cc,cur,ph,band,auth,re,pay}));
-const BYCC=Object.fromEntries(C.map(c=>[c.cc,c]));
-
-/* ============================== state ============================== */
+const UFS=[["AC","Acre"],["AL","Alagoas"],["AP","Amapá"],["AM","Amazonas"],["BA","Bahia"],["CE","Ceará"],["DF","Distrito Federal"],["ES","Espírito Santo"],["GO","Goiás"],["MA","Maranhão"],["MT","Mato Grosso"],["MS","Mato Grosso do Sul"],["MG","Minas Gerais"],["PA","Pará"],["PB","Paraíba"],["PR","Paraná"],["PE","Pernambuco"],["PI","Piauí"],["RJ","Rio de Janeiro"],["RN","Rio Grande do Norte"],["RS","Rio Grande do Sul"],["RO","Rondônia"],["RR","Roraima"],["SC","Santa Catarina"],["SP","São Paulo"],["SE","Sergipe"],["TO","Tocantins"]];
+const DETRAN=Object.fromEntries(UFS.map(([u])=>[u,`https://www.detran.${u.toLowerCase()}.gov.br/`]));
+const CDT_URL="https://www.gov.br/pt-br/apps/carteira-digital-de-transito";
+const SENATRAN_URL="https://portalservicos.senatran.serpro.gov.br/";
+const PLATE_RE=/^[A-Z]{3}-?\d[A-Z0-9]\d{2}$/;
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
-let lang=LS.get("pg.lang","fr"), curMode=LS.get("pg.cur","auto"), country=LS.get("pg.country","FR"), lastResult=null, tab="check", ffilter="open";
-if(!I18N[lang])lang="fr"; if(curMode!=="auto"&&!STATIC_RATES[curMode])curMode="auto"; if(!BYCC[country])country="FR";
-const T=k=>I18N[lang][k];
-const $=id=>document.getElementById(id);
+let lang=LS.get("pg.lang","pt"), uf=LS.get("pg.uf","SP"), recent=LS.get("pg.recent2",[]);
+if(!I18N[lang])lang="pt"; if(!DETRAN[uf])uf="SP";
+const T=k=>I18N[lang][k]; const $=id=>document.getElementById(id);
 const esc=s=>String(s??"").replace(/[&<>"]/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[m]));
-const flag=cc=>String.fromCodePoint(...[...cc].map(c=>0x1F1E6+c.charCodeAt(0)-65));
-const regionName=cc=>{try{return new Intl.DisplayNames([LOCALE[lang]],{type:"region"}).of(cc)}catch(e){return cc}};
-const curName=c=>{try{return new Intl.DisplayNames([LOCALE[lang]],{type:"currency"}).of(c)}catch(e){return c}};
-const fmt=(v,cur)=>{try{return new Intl.NumberFormat(LOCALE[lang],{style:"currency",currency:cur,maximumFractionDigits:["JPY","KRW"].includes(cur)?0:2}).format(v)}catch(e){return v.toFixed(2)+" "+cur}};
-const dateF=d=>{try{return new Intl.DateTimeFormat(LOCALE[lang],{dateStyle:"medium"}).format(d)}catch(e){return String(d).slice(0,10)}};
-const convert=(v,from,to)=>v/(RATES[from]||1)*(RATES[to]||1);
-const dispCur=()=>curMode==="auto"?BYCC[country].cur:curMode;
-const normPlate=s=>s.normalize("NFKC").toUpperCase().replace(/[^\p{L}\p{N}\s\-·.]/gu,"").replace(/\s+/g," ").trim();
-const plateKey=s=>normPlate(s).replace(/[\s\-·.]/g,"");
-
-/* ============================== simulation ============================== */
-function hash(s){let h=2166136261;for(const ch of s){h^=ch.charCodeAt(0);h=Math.imul(h,16777619)}return h>>>0}
-function rng(seed){return()=>{seed|=0;seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-function simulate(cc,plate){
-  const r=rng(hash(cc+":"+plateKey(plate))); const c=BYCC[cc];
-  const ref="REG-"+String(Math.floor(r()*900000)+100000);
-  const items=[];
-  if(r()<0.42){
-    const n=1+Math.floor(r()*r()*4);
-    for(let i=0;i<n;i++){
-      const type=Math.floor(r()*10);
-      const baseEUR=[90,135,35,135,500,135,135,20,135,135][type]*(0.6+r()*1.3);
-      let local=baseEUR*STATIC_RATES[c.cur];
-      const step=local>2000?100:local>200?10:local>20?1:0.5; local=Math.max(step,Math.round(local/step)*step);
-      const days=Math.floor(r()*400)+5; const late=days>60;
-      items.push({type,local:late?Math.round(local*1.5/step)*step:local,date:new Date(Date.now()-days*864e5),late,pts:[0,1,3,8].includes(type)?1+Math.floor(r()*3):0});
-    }
-    items.sort((a,b)=>b.date-a.date);
-  }
-  return {cc,plate:normPlate(plate),ref,items,total:items.reduce((s,i)=>s+i.local,0),cur:c.cur};
-}
-
-/* ============================== shared render ============================== */
-const SVG={ok:'<svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg>',bad:'<svg viewBox="0 0 24 24"><path d="M12 7v6M12 17h.01"/></svg>',ext:'<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>',shield:'<svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>',edit:'<svg viewBox="0 0 24 24"><path d="M4 20h4l10-10-4-4L4 16z"/></svg>',del:'<svg viewBox="0 0 24 24"><path d="M5 7h14M10 7V4h4v3M7 7l1 13h8l1-13"/></svg>',check:'<svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>',undo:'<svg viewBox="0 0 24 24"><path d="M4 10h10a5 5 0 0 1 0 10H9M4 10l4-4M4 10l4 4"/></svg>',search:'<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>'};
-function countryOptions(){
-  return C.map(c=>({c,n:regionName(c.cc)})).sort((a,b)=>a.n.localeCompare(b.n,LOCALE[lang])).map(({c,n})=>`<option value="${c.cc}">${esc(n)} · ${c.cc} · ${c.cur}</option>`).join("");
-}
-function currencyOptions(withAuto){
-  const items=Object.keys(STATIC_RATES).map(k=>({k,n:curName(k)})).sort((a,b)=>a.k.localeCompare(b.k));
-  return (withAuto?`<option value="auto">${esc(T("auto"))}</option>`:"")+items.map(({k,n})=>`<option value="${k}">${k} — ${esc(n)}</option>`).join("");
-}
+const normPlate=s=>s.normalize("NFKC").toUpperCase().replace(/[^A-Z0-9-]/g,"").slice(0,8);
+const plateKey=s=>normPlate(s).replace(/-/g,"");
+const ext='<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg>';
+const short=u=>u.replace(/^https:\/\/(www\.)?/,"").replace(/\/$/,"");
 function applyLang(){
   document.documentElement.lang=lang; document.documentElement.dir=lang==="ar"?"rtl":"ltr";
   document.querySelectorAll("[data-i]").forEach(el=>{el.textContent=T(el.dataset.i)});
   document.querySelectorAll("#langs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===lang)));
-  const co=countryOptions();
-  $("country").innerHTML=co; $("country").value=country;
-  const fcc=$("f-cc").value||country; $("f-cc").innerHTML=co; $("f-cc").value=fcc;
-  const pcc=$("p-cc").value||country; $("p-cc").innerHTML=co; $("p-cc").value=pcc;
-  $("cur").innerHTML=currencyOptions(true); $("cur").value=curMode;
-  const fcur=$("f-cur").value||BYCC[fcc].cur; $("f-cur").innerHTML=currencyOptions(false); $("f-cur").value=fcur;
-  const ft=$("f-type").value||"0"; $("f-type").innerHTML=T("types").map((t,i)=>`<option value="${i}">${esc(t)}</option>`).join(""); $("f-type").value=ft;
-  $("safesteps").innerHTML=T("safe").map(([b,s])=>`<li><div><b>${esc(b)}</b><span>${esc(s)}</span></div></li>`).join("");
-  updateHero(); updateHints(); updatePreview(); renderChips(); renderRateStatus(); renderLedger(); renderPay();
-  if(lastResult)renderResult(lastResult);
+  $("h1").innerHTML=T("h1");
+  $("uf").innerHTML=UFS.map(([c,n])=>`<option value="${c}">${c} — ${esc(n)}</option>`).join(""); $("uf").value=uf;
+  update(); renderOfficial(); renderChips();
 }
-function updateHero(){ $("h1").innerHTML=T("h1_"+tab); $("lead").textContent=T("lead_"+tab); $("facts").hidden=tab!=="check"; }
-function setTab(t){
-  tab=t; ["check","fines","pay"].forEach(k=>{$("view-"+k).hidden=k!==t});
-  document.querySelectorAll("#tabs button").forEach(b=>b.setAttribute("aria-selected",String(b.dataset.tab===t)));
-  updateHero(); try{history.replaceState(null,"","#"+t)}catch(e){}
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-$("tabs").addEventListener("click",e=>{const b=e.target.closest("button");if(b)setTab(b.dataset.tab)});
-function toast(msg){const t=$("toast");t.textContent=msg;t.hidden=false;t.style.opacity=1;clearTimeout(t._h);t._h=setTimeout(()=>{t.style.opacity=0;setTimeout(()=>t.hidden=true,300)},1800)}
-
-/* ============================== check view ============================== */
-function updateHints(){
-  const c=BYCC[country];
-  $("curhint").innerHTML=esc(curMode==="auto"?T("curAuto"):T("curForced"))+" <b>"+c.cur+" · "+esc(curName(c.cur))+"</b>";
-  const v=normPlate($("plate").value); const bad=v&&c.re&&!c.re.test(v);
+function update(){
+  const v=normPlate($("plate").value); const bad=v&&!PLATE_RE.test(v);
   $("platehint").className="hint"+(bad?" warn":""); $("plate").classList.toggle("warn",!!bad);
-  $("platehint").innerHTML=bad?esc(T("fmtBad").replace("{f}",c.ph)):esc(T("fmtOk"))+" <b class='mono'>"+esc(c.ph)+"</b>";
+  $("platehint").textContent=bad?T("fmtBad"):T("fmtOk");
+  $("pnum").textContent=v||"ABC1D23"; $("pnum").classList.toggle("ph",!v); $("pufl").textContent=uf;
+  $("golbl").textContent=T("go").replace("{uf}",uf);
 }
-function updatePreview(){
-  const c=BYCC[country]; const v=normPlate($("plate").value);
-  $("band").style.background=c.band; $("bandcc").textContent=c.cc; $("bandcur").textContent=c.cur;
-  $("pnum").textContent=v||c.ph; $("pnum").classList.toggle("ph",!v); $("plate").placeholder=c.ph;
+function renderOfficial(){
+  $("official").innerHTML=`<div class="k"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>${esc(T("official"))}</div>
+    <a href="${CDT_URL}" target="_blank" rel="noopener"><span>${esc(T("cdt"))}<span class="d">${esc(T("cdtD"))}</span></span>${ext}</a>
+    <a href="${SENATRAN_URL}" target="_blank" rel="noopener"><span>${esc(T("senatran"))}<span class="d">${esc(T("senatranD"))}</span></span>${ext}</a>
+    <a href="${DETRAN[uf]}" target="_blank" rel="noopener"><span>DETRAN-${uf}<span class="d">${short(DETRAN[uf])}</span></span>${ext}</a>`;
 }
-function renderResult(res){
-  lastResult=res; const c=BYCC[res.cc]; const dc=dispCur(); const bad=res.items.length>0;
-  const totalDisp=convert(res.total,res.cur,dc);
-  let h=`<div class="banner ${bad?"bad":"ok"}"><div class="ic">${bad?SVG.bad:SVG.ok}</div><div>
-    <b>${esc(bad?T("badT").replace("{n}",res.items.length):T("okT"))}</b><p>${esc(bad?T("badP"):T("okP"))}</p>
-    <div class="ref">${esc(T("ref"))} ${res.ref} · ${res.cc} ${esc(regionName(res.cc))}</div></div></div>`;
-  h+=`<div class="tiles">
-    <div class="tile"><div class="k">${esc(T("tPlate"))}</div><div class="v mono" dir="ltr">${esc(res.plate)}</div><div class="sub">${c.cc} · ${esc(c.ph)}</div></div>
-    <div class="tile"><div class="k">${esc(T("tTotal"))}</div><div class="v ${bad?"bad":""}">${fmt(totalDisp,dc)}</div><div class="sub">${dc!==res.cur&&bad?esc(T("inLocal").replace("{x}",fmt(res.total,res.cur))):dc+(dc!==res.cur?" · "+res.cur:"")}</div></div>
-    <div class="tile"><div class="k">${esc(T("tAuth"))}</div><div class="v" style="font-size:17px">${bad?esc(c.auth):esc(T("none"))}</div>${bad?`<div class="sub">${res.items.filter(i=>i.late).length} ${esc(T("status_late").toLowerCase())}</div>`:""}</div>
-  </div>`;
-  if(bad){
-    h+=`<div class="inf"><div class="ih"><span>${esc(T("infrs"))}</span><span>${dc}</span></div>`+res.items.map(i=>`<div class="it">
-      <div><b>${esc(T("types")[i.type])}</b>${i.pts?` <span class="m">· −${i.pts} ${esc(T("pts"))}</span>`:""}<div class="m">${dateF(i.date)} · <span class="pill ${i.late?"late":"due"}">${esc(i.late?T("status_late"):T("status_due"))}</span></div></div>
-      <div class="amt">${fmt(convert(i.local,res.cur,dc),dc)}${dc!==res.cur?`<small>${fmt(i.local,res.cur)}</small>`:""}</div></div>`).join("")+`</div>`;
-  }
-  h+=`<div class="links"><div class="k">${SVG.shield}${esc(T("steps"))}</div>`+
-     (c.pay.links.length?c.pay.links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener"><span>${esc(n)}</span>${SVG.ext}</a>`).join(""):`<div class="none">${esc(T("nolinks"))}</div>`)+
-     `<div class="actions" style="margin-top:12px"><button type="button" class="btn sm ghost" data-gopay="${res.cc}">${esc(T("goPay"))}</button></div></div>`;
-  $("rbody").innerHTML=h; $("results").hidden=false;
-}
-$("rbody").addEventListener("click",e=>{const b=e.target.closest("[data-gopay]");if(!b)return;$("p-cc").value=b.dataset.gopay;renderPay();setTab("pay")});
-let recent=LS.get("pg.recent",[]);
 function renderChips(){
-  $("chips").innerHTML=recent.length?recent.map((r,i)=>`<button type="button" class="chip" data-i2="${i}"><span class="cc">${r.cc}</span>${esc(r.plate)}<svg viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg></button>`).join(""):`<span class="empty">${esc(T("norecent"))}</span>`;
+  $("chips").innerHTML=recent.length?recent.map((r,i)=>`<button type="button" class="chip" data-i2="${i}"><span class="cc">${r.uf}</span>${esc(r.plate)}<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/></svg></button>`).join(""):`<span class="empty">${esc(T("norecent"))}</span>`;
 }
-$("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const r=recent[+b.dataset.i2];country=r.cc;LS.set("pg.country",country);$("country").value=r.cc;$("plate").value=r.plate;updateHints();updatePreview();run()});
-$("clear").addEventListener("click",()=>{recent=[];LS.set("pg.recent",recent);renderChips()});
-let busy=false;
-function run(){
-  const plate=normPlate($("plate").value); if(!plate||busy)return; busy=true;
-  const go=$("go"); go.disabled=true; go.innerHTML=`<span class="spin"></span><span>${esc(T("checking"))}</span>`;
-  setTimeout(()=>{
-    const res=simulate(country,plate); renderResult(res);
-    const k=plateKey(plate); recent=[{cc:country,plate},...recent.filter(r=>!(r.cc===country&&plateKey(r.plate)===k))].slice(0,12); LS.set("pg.recent",recent); renderChips();
-    go.disabled=false; go.innerHTML=SVG.search+`<span>${esc(T("check"))}</span>`; busy=false;
-    $("results").scrollIntoView({behavior:"smooth",block:"start"});
-  },650+Math.random()*500);
+function go(){
+  const plate=normPlate($("plate").value); if(!plate)return;
+  recent=[{uf,plate},...recent.filter(r=>!(r.uf===uf&&plateKey(r.plate)===plateKey(plate)))].slice(0,12); LS.set("pg.recent2",recent); renderChips();
+  const w=window.open(DETRAN[uf],"_blank","noopener"); if(!w)location.href=DETRAN[uf];
 }
-$("form").addEventListener("submit",e=>{e.preventDefault();run()});
-$("country").addEventListener("change",e=>{country=e.target.value;LS.set("pg.country",country);updateHints();updatePreview();if(lastResult)renderResult(lastResult)});
-$("cur").addEventListener("change",e=>{curMode=e.target.value;LS.set("pg.cur",curMode);updateHints();if(lastResult)renderResult(lastResult);renderLedger()});
-$("plate").addEventListener("input",()=>{updateHints();updatePreview()});
-
-/* ============================== my fines ============================== */
-let fines=LS.get("pg.fines",[]);
-const saveFines=()=>LS.set("pg.fines",fines);
-const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,7);
-function renderLedger(){
-  const dc=dispCur(); const open=fines.filter(f=>!f.paid), paid=fines.filter(f=>f.paid);
-  const sum=a=>a.reduce((s,f)=>s+convert(+f.amount||0,f.cur,dc),0);
-  $("ftiles").innerHTML=`
-    <div class="tile"><div class="k">${esc(T("tOpen"))}</div><div class="v ${open.length?"bad":"ok"}">${fmt(sum(open),dc)}</div><div class="sub">${dc}</div></div>
-    <div class="tile"><div class="k">${esc(T("tCount"))}</div><div class="v">${open.length}</div><div class="sub">${open.filter(f=>f.due&&f.due<today()).length} ${esc(T("overdue"))}</div></div>
-    <div class="tile"><div class="k">${esc(T("tPaidSum"))}</div><div class="v">${fmt(sum(paid),dc)}</div><div class="sub">${paid.length}</div></div>`;
-  $("finecnt").hidden=!open.length; $("finecnt").textContent=open.length;
-  document.querySelectorAll("#ffilters button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.f===ffilter)));
-  const list=(ffilter==="all"?fines:ffilter==="paid"?paid:open).slice().sort((a,b)=>(b.date||"").localeCompare(a.date||""));
-  $("ledger").innerHTML=list.length?list.map(f=>{
-    const over=!f.paid&&f.due&&f.due<today();
-    return `<div class="lrow ${f.paid?"paid":""}" data-id="${f.id}">
-      <span class="flag">${f.cc}</span>
-      <div class="t"><b>${esc(T("types")[f.type]??T("types")[10])}</b>${f.plate?` <span class="mono" dir="ltr" style="font-size:13px;color:var(--muted)">${esc(f.plate)}</span>`:""}
-        <div class="m"><span>${f.date?dateF(new Date(f.date+"T00:00:00")):""}</span>${f.ref?`<span dir="ltr">#${esc(f.ref)}</span>`:""}
-        <span class="pill ${f.paid?"paid":over?"late":"due"}">${esc(f.paid?T("status_paid"):over?T("overdue").toUpperCase():T("status_due"))}</span>
-        ${!f.paid&&f.due?`<span>${esc(T("dueIn").replace("{d}",dateF(new Date(f.due+"T00:00:00"))))}</span>`:""}</div></div>
-      <div class="amt">${fmt(convert(+f.amount,f.cur,dc),dc)}${f.cur!==dc?`<small>${fmt(+f.amount,f.cur)}</small>`:""}</div>
-      <div class="ops">
-        <button type="button" class="ib" data-op="toggle" title="${esc(f.paid?T("fOpen"):T("markPaid"))}">${f.paid?SVG.undo:SVG.check}</button>
-        <button type="button" class="ib" data-op="edit" title="${esc(T("editFine"))}">${SVG.edit}</button>
-        <button type="button" class="ib" data-op="del" title="${esc(T("deleted"))}">${SVG.del}</button>
-      </div></div>`}).join(""):`<div class="empty" style="padding:16px">${esc(T("noFines"))}</div>`;
-}
-const today=()=>new Date().toISOString().slice(0,10);
-$("ffilters").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;ffilter=b.dataset.f;renderLedger()});
-$("ledger").addEventListener("click",e=>{
-  const b=e.target.closest("[data-op]"); if(!b)return; const id=b.closest(".lrow").dataset.id; const f=fines.find(x=>x.id===id); if(!f)return;
-  if(b.dataset.op==="toggle"){f.paid=!f.paid;saveFines();renderLedger()}
-  else if(b.dataset.op==="edit"){fillForm(f);$("fform").scrollIntoView({behavior:"smooth",block:"start"})}
-  else if(b.dataset.op==="del"){
-    if(b.classList.contains("confirm")){fines=fines.filter(x=>x.id!==id);saveFines();renderLedger();toast(T("deleted"))}
-    else{b.classList.add("confirm");b.textContent=T("confirmDel");setTimeout(()=>{if(b.isConnected){b.classList.remove("confirm");b.innerHTML=SVG.del}},2500)}
-  }
-});
-function fillForm(f){
-  $("f-id").value=f?f.id:""; $("f-cc").value=f?f.cc:country; $("f-plate").value=f?f.plate:""; $("f-date").value=f?f.date:today();
-  $("f-amt").value=f?f.amount:""; $("f-cur").value=f?f.cur:BYCC[$("f-cc").value].cur; $("f-type").value=f?f.type:0; $("f-ref").value=f?f.ref||"":""; $("f-due").value=f?f.due||"":""; $("f-paid").checked=!!(f&&f.paid);
-  $("fformtitle").querySelector("[data-i]").textContent=f?T("editFine"):T("addFine"); $("fcancel").hidden=!f;
-}
-$("f-cc").addEventListener("change",e=>{$("f-cur").value=BYCC[e.target.value].cur;$("f-plate").placeholder=BYCC[e.target.value].ph});
-$("fcancel").addEventListener("click",()=>fillForm(null));
-$("fform").addEventListener("submit",e=>{
-  e.preventDefault(); const amt=parseFloat($("f-amt").value); if(!(amt>=0))return;
-  const rec={id:$("f-id").value||uid(),cc:$("f-cc").value,plate:normPlate($("f-plate").value),date:$("f-date").value,amount:Math.round(amt*100)/100,cur:$("f-cur").value,type:+$("f-type").value,ref:$("f-ref").value.trim(),due:$("f-due").value,paid:$("f-paid").checked};
-  const i=fines.findIndex(x=>x.id===rec.id); if(i>=0)fines[i]=rec; else fines.push(rec);
-  saveFines(); renderLedger(); fillForm(null); toast(T("saved"));
-});
-$("bk-copy").addEventListener("click",()=>{
-  const txt=JSON.stringify(fines); $("bk-text").value=txt;
-  const done=()=>toast(T("copied"));
-  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,()=>{$("bk-text").select();done()}); else{$("bk-text").select();done()}
-});
-$("bk-import").addEventListener("click",()=>{
-  try{const arr=JSON.parse($("bk-text").value); if(!Array.isArray(arr))throw 0; let n=0;
-    for(const f of arr){ if(!f||!BYCC[f.cc]||!STATIC_RATES[f.cur]||!(+f.amount>=0))continue;
-      const rec={id:String(f.id||uid()),cc:f.cc,plate:normPlate(String(f.plate||"")),date:String(f.date||today()).slice(0,10),amount:+f.amount,cur:f.cur,type:Math.min(10,Math.max(0,+f.type||0)),ref:String(f.ref||"").slice(0,40),due:String(f.due||"").slice(0,10),paid:!!f.paid};
-      const i=fines.findIndex(x=>x.id===rec.id); if(i>=0)fines[i]=rec; else fines.push(rec); n++; }
-    saveFines(); renderLedger(); toast(T("imported").replace("{n}",n));
-  }catch(e){toast(T("badJson"))}
-});
-
-/* ============================== pay view ============================== */
-function renderPay(){
-  const c=BYCC[$("p-cc").value||country]; const p=c.pay;
-  const tag=a=>a.map(x=>`<span class="tag">${esc(x)}</span>`).join("");
-  $("paybody").innerHTML=`
-    <div class="banner warn"><div class="ic">${SVG.bad}</div><div><b>${esc(c.auth)}</b><p>${esc(T("level"))} : ${esc(T("lvl_"+p.level))}</p></div></div>
-    <div class="pay-grid">
-      <div class="tile"><div class="k">${esc(T("discount"))}</div><div class="v ${p.disc?"ok":""}" style="font-size:17px">${p.disc?(p.disc[0]?(p.disc[1]?esc(T("discountV").replace("{p}",p.disc[0]).replace("{d}",p.disc[1])):"−"+p.disc[0]+"% · "+esc(T("m_app"))):esc(T("deadlineV").replace("{d}",p.disc[1]))+" ↓"):esc(T("noDiscount"))}</div></div>
-      <div class="tile"><div class="k">${esc(T("deadline"))}</div><div class="v" style="font-size:17px">${p.dl?esc(T("deadlineV").replace("{d}",p.dl)):esc(T("noDeadline"))}</div></div>
-      <div class="tile"><div class="k">${esc(T("needs"))}</div><div class="tags" style="margin-top:0">${tag(p.needs.map(n=>T("need_"+n)))}</div></div>
-      <div class="tile"><div class="k">${esc(T("methods"))}</div><div class="tags" style="margin-top:0">${tag(p.methods.map(m=>T("m_"+m)))}</div></div>
-    </div>
-    <div class="links"><div class="k">${SVG.shield}${esc(T("portals"))}</div>
-      ${p.links.length?p.links.map(([n,u])=>`<a href="${u}" target="_blank" rel="noopener"><span>${esc(n)}</span><span class="mono" style="font-size:12px;color:var(--muted);direction:ltr">${esc(u.replace(/^https?:\/\/(www\.)?/,""))}</span>${SVG.ext}</a>`).join(""):`<div class="none">${esc(T("nolinks"))}</div>`}
-    </div>
-    <p class="empty" style="margin:14px 0 0">${esc(T("caveat"))}</p>`;
-}
-$("p-cc").addEventListener("change",renderPay);
-
-/* ============================== misc ============================== */
+$("form").addEventListener("submit",e=>{e.preventDefault();go()});
+$("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const r=recent[+b.dataset.i2];uf=r.uf;LS.set("pg.uf",uf);$("uf").value=uf;$("plate").value=r.plate;update();renderOfficial();go()});
+$("clear").addEventListener("click",()=>{recent=[];LS.set("pg.recent2",recent);renderChips()});
+$("uf").addEventListener("change",e=>{uf=e.target.value;LS.set("pg.uf",uf);update();renderOfficial()});
+$("plate").addEventListener("input",update);
 $("langs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;lang=b.dataset.lang;LS.set("pg.lang",lang);applyLang()});
 const tick=()=>{$("clock").textContent=new Date().toISOString().slice(11,19)+" UTC"};tick();setInterval(tick,1000);
-
-/* boot */
-$("country").innerHTML=countryOptions(); $("country").value=country; $("p-cc").value=country;
-applyLang(); fillForm(null);
-const h0=(location.hash||"").slice(1); if(["fines","pay"].includes(h0))setTab(h0);
-loadRates();
+applyLang();
 </script>
 
 <script data-goatcounter="https://plateguard.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
