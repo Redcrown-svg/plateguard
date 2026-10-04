@@ -98,6 +98,11 @@ input.ctl::placeholder{color:var(--muted-2);font-weight:400}
 .chip:hover{border-color:var(--accent)}
 .chip .cc{font-size:10px;color:var(--muted)}
 .chip svg{width:12px;height:12px;stroke:var(--muted);fill:none;stroke-width:2}
+.disc{display:flex;gap:14px;align-items:flex-start;background:rgba(47,210,122,.06);border:1px solid var(--ok-line);border-radius:var(--r);padding:16px 18px}
+.disc .ic{width:30px;height:30px;flex:none;border-radius:8px;border:1px solid var(--ok-line);display:grid;place-items:center;color:var(--ok)}
+.disc .ic svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2}
+.disc b{display:block;font-size:14px;margin-bottom:2px}
+.disc p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
 footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;color:var(--muted)}
 .badge{display:inline-flex;align-items:center;gap:6px;font:700 11px var(--mono);letter-spacing:.1em;color:var(--ok);border:1px solid var(--ok-line);border-radius:6px;padding:3px 8px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
@@ -128,6 +133,10 @@ footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;c
 </div></section>
 
 <main class="wrap">
+  <section class="disc">
+    <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+    <div><b data-i="disT"></b><p data-i="disB"></p></div>
+  </section>
   <section class="panel">
     <h2><span class="n">01</span><span data-i="console"></span></h2>
     <form id="form" autocomplete="off">
@@ -137,7 +146,7 @@ footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;c
       </div>
       <div class="pprev"><div class="top"><span>BRASIL</span>·<span id="pufl">BR</span></div><div class="num ph" id="pnum">ABC1D23</div></div>
       <button class="btn" type="submit" id="go"><svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg><span id="golbl"></span></button>
-      <div class="hint" style="text-align:center;margin-top:10px" data-i="goHint"></div>
+      <div class="hint" style="text-align:center;margin-top:10px" id="goHint2"></div>
     </form>
   </section>
 
@@ -156,45 +165,50 @@ footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;c
 
 <script>
 const I18N={
-pt:{sub:"Consulta de multas · Brasil",realtag:"SEM DADOS INVENTADOS",
+pt:{sub:"Consulta de multas · Brasil",realtag:"SEM DADOS INVENTADOS",disT:"Transparência",disB:"A consulta é feita diretamente no site oficial do DETRAN. Para proteger seus dados, esses órgãos pedem que você mesmo se identifique e resolva o captcha. O PlateGuard apenas leva você até lá — nada do que você digita passa por nós nem fica guardado.",
 h1:"Consulte suas multas <em>na fonte oficial.</em>",lead:"Escolha o estado e digite a placa: o PlateGuard abre a consulta oficial do DETRAN. Tenha o RENAVAM (no CRLV) à mão — a maioria dos estados pede placa + RENAVAM.",
 f1:"Somente fontes oficiais",f2:"26 estados + Distrito Federal",f3:"Nada é enviado nem guardado por nós",
 console:"Consulta oficial",uf:"Estado de registro (UF)",plate:"Placa",
 fmtOk:"Formato Mercosul ABC1D23 ou antigo ABC1234",fmtBad:"Placa fora do padrão brasileiro (esperado ABC1D23 ou ABC1234).",
-go:"Consultar no DETRAN-{uf}",goHint:"Abre o site oficial em nova aba.",
+go:"Consultar no DETRAN-{uf}",goHint:"Abre o site oficial em nova aba.",goHintForm:"RJ: formulário público — digite os dados e marque o captcha você mesmo.",goHintLogin:"Abre o site do DETRAN deste estado. Faça login lá para ver suas multas.",
 official:"Outras fontes oficiais",cdt:"Carteira Digital de Trânsito",cdtD:"Todas as suas multas, em qualquer estado, com 40% de desconto via SNE",senatran:"Senatran — Portal de Serviços",senatranD:"Infrações e pontos na CNH, com login gov.br",
 recent:"Consultas recentes",clear:"Limpar",norecent:"Nenhuma consulta ainda.",
 foot:"O PlateGuard não consulta multas por conta própria: ele leva você à fonte oficial. Nenhum resultado é gerado ou estimado."},
-fr:{sub:"Consultation d'amendes · Brésil",realtag:"AUCUNE DONNÉE INVENTÉE",
+fr:{sub:"Consultation d'amendes · Brésil",realtag:"AUCUNE DONNÉE INVENTÉE",disT:"En toute transparence",disB:"La consultation se fait directement sur le site officiel du DETRAN. Pour protéger vos données, ces services demandent que vous vous identifiiez vous-même et validiez le captcha. PlateGuard ne fait que vous y conduire : rien de ce que vous saisissez ne passe par nous ni n\u2019est conservé.",
 h1:"Consultez vos amendes <em>à la source officielle.</em>",lead:"Choisissez l'État et tapez la plaque : PlateGuard ouvre la consultation officielle du DETRAN. Gardez le RENAVAM (sur le CRLV) sous la main : la plupart des États demandent plaque + RENAVAM.",
 f1:"Sources officielles uniquement",f2:"26 États + District fédéral",f3:"Rien n'est envoyé ni stocké par nous",
 console:"Consultation officielle",uf:"État d'immatriculation (UF)",plate:"Plaque",
 fmtOk:"Format Mercosul ABC1D23 ou ancien ABC1234",fmtBad:"Plaque hors format brésilien (attendu ABC1D23 ou ABC1234).",
-go:"Consulter sur DETRAN-{uf}",goHint:"Ouvre le site officiel dans un nouvel onglet.",
+go:"Consulter sur DETRAN-{uf}",goHint:"Ouvre le site officiel dans un nouvel onglet.",goHintForm:"RJ : formulaire public — saisissez les données et cochez le captcha vous-même.",goHintLogin:"Ouvre le site du DETRAN de cet État. Connectez-vous sur place pour voir vos amendes.",
 official:"Autres sources officielles",cdt:"Carteira Digital de Trânsito",cdtD:"Toutes vos amendes, tous États confondus, avec 40 % de remise via SNE",senatran:"Senatran — Portail de services",senatranD:"Infractions et points sur le permis, avec login gov.br",
 recent:"Consultations récentes",clear:"Effacer",norecent:"Aucune consultation pour le moment.",
 foot:"PlateGuard ne consulte pas les amendes lui-même : il vous amène à la source officielle. Aucun résultat n'est généré ni estimé."},
-en:{sub:"Fine lookup · Brazil",realtag:"NO INVENTED DATA",
+en:{sub:"Fine lookup · Brazil",realtag:"NO INVENTED DATA",disT:"Full transparency",disB:"The lookup happens directly on the official DETRAN site. To protect your data, those services ask you to identify yourself and solve the captcha. PlateGuard only takes you there — nothing you type passes through us or is stored.",
 h1:"Check your fines <em>at the official source.</em>",lead:"Pick the state and type the plate: PlateGuard opens the official DETRAN lookup. Keep the RENAVAM (on the CRLV) handy; most states ask for plate + RENAVAM.",
 f1:"Official sources only",f2:"26 states + Federal District",f3:"Nothing is sent or stored by us",
 console:"Official lookup",uf:"State of registration (UF)",plate:"Plate",
 fmtOk:"Mercosul format ABC1D23 or legacy ABC1234",fmtBad:"Plate outside the Brazilian format (expected ABC1D23 or ABC1234).",
-go:"Check at DETRAN-{uf}",goHint:"Opens the official site in a new tab.",
+go:"Check at DETRAN-{uf}",goHint:"Opens the official site in a new tab.",goHintForm:"RJ: public form — enter the data and tick the captcha yourself.",goHintLogin:"Opens this state's DETRAN site. Log in there to see your fines.",
 official:"Other official sources",cdt:"Carteira Digital de Trânsito",cdtD:"All your fines, in any state, with 40% off via SNE",senatran:"Senatran — Services portal",senatranD:"Offences and licence points, with gov.br login",
 recent:"Recent lookups",clear:"Clear",norecent:"No lookups yet.",
 foot:"PlateGuard does not look up fines itself: it takes you to the official source. No result is generated or estimated."},
-ar:{sub:"الاستعلام عن المخالفات · البرازيل",realtag:"بدون بيانات مختلقة",
+ar:{sub:"الاستعلام عن المخالفات · البرازيل",realtag:"بدون بيانات مختلقة",disT:"بكل شفافية",disB:"يتم الاستعلام مباشرة على موقع DETRAN الرسمي. لحماية بياناتك، تطلب هذه الجهات أن تعرّف عن نفسك وتحل الكابتشا بنفسك. يكتفي PlateGuard بأخذك إلى هناك — لا شيء مما تكتبه يمر عبرنا أو يُحفظ.",
 h1:"استعلم عن مخالفاتك <em>من المصدر الرسمي.</em>",lead:"اختر الولاية وأدخل اللوحة: يفتح PlateGuard استعلام DETRAN الرسمي. احتفظ برقم RENAVAM (في وثيقة CRLV) فمعظم الولايات تطلب اللوحة + RENAVAM.",
 f1:"مصادر رسمية فقط",f2:"26 ولاية + المقاطعة الفيدرالية",f3:"لا نرسل ولا نخزن شيئاً",
 console:"الاستعلام الرسمي",uf:"ولاية التسجيل (UF)",plate:"اللوحة",
 fmtOk:"صيغة Mercosul ABC1D23 أو القديمة ABC1234",fmtBad:"اللوحة خارج الصيغة البرازيلية (المتوقع ABC1D23 أو ABC1234).",
-go:"استعلم في DETRAN-{uf}",goHint:"يفتح الموقع الرسمي في تبويب جديد.",
+go:"استعلم في DETRAN-{uf}",goHint:"يفتح الموقع الرسمي في تبويب جديد.",goHintForm:"RJ: نموذج عام — أدخل البيانات وحل الكابتشا بنفسك.",goHintLogin:"يفتح موقع DETRAN لهذه الولاية. سجّل الدخول هناك لرؤية مخالفاتك.",
 official:"مصادر رسمية أخرى",cdt:"Carteira Digital de Trânsito",cdtD:"كل مخالفاتك في أي ولاية، مع خصم 40% عبر SNE",senatran:"Senatran — بوابة الخدمات",senatranD:"المخالفات ونقاط الرخصة، بتسجيل دخول gov.br",
 recent:"الاستعلامات الأخيرة",clear:"مسح",norecent:"لا توجد استعلامات بعد.",
 foot:"لا يستعلم PlateGuard عن المخالفات بنفسه: بل يأخذك إلى المصدر الرسمي. لا تُولَّد أي نتيجة ولا تُقدَّر."}
 };
 const UFS=[["AC","Acre"],["AL","Alagoas"],["AP","Amapá"],["AM","Amazonas"],["BA","Bahia"],["CE","Ceará"],["DF","Distrito Federal"],["ES","Espírito Santo"],["GO","Goiás"],["MA","Maranhão"],["MT","Mato Grosso"],["MS","Mato Grosso do Sul"],["MG","Minas Gerais"],["PA","Pará"],["PB","Paraíba"],["PR","Paraná"],["PE","Pernambuco"],["PI","Piauí"],["RJ","Rio de Janeiro"],["RN","Rio Grande do Norte"],["RS","Rio Grande do Sul"],["RO","Rondônia"],["RR","Roraima"],["SC","Santa Catarina"],["SP","São Paulo"],["SE","Sergipe"],["TO","Tocantins"]];
 const DETRAN=Object.fromEntries(UFS.map(([u])=>[u,`https://www.detran.${u.toLowerCase()}.gov.br/`]));
+/* Destination for the lookup button. RJ has a public form (captcha, no login); every other state
+   uses the national gov.br/Senatran consultation, which covers all 27 UFs with a gov.br login. */
+const CONSULTA={ RJ:"https://www.detran.rj.gov.br/consultas/consultas-drv/nada-consta" };
+const lookupUrl=u=>CONSULTA[u]||DETRAN[u];
+const lookupLogin=u=>!CONSULTA[u];
 const CDT_URL="https://www.gov.br/pt-br/apps/carteira-digital-de-transito";
 const SENATRAN_URL="https://portalservicos.senatran.serpro.gov.br/";
 const PLATE_RE=/^[A-Z]{3}-?\d[A-Z0-9]\d{2}$/;
@@ -221,12 +235,13 @@ function update(){
   $("platehint").textContent=bad?T("fmtBad"):T("fmtOk");
   $("pnum").textContent=v||"ABC1D23"; $("pnum").classList.toggle("ph",!v); $("pufl").textContent=uf;
   $("golbl").textContent=T("go").replace("{uf}",uf);
+  $("goHint2").textContent=lookupLogin(uf)?T("goHintLogin"):T("goHintForm");
 }
 function renderOfficial(){
   $("official").innerHTML=`<div class="k"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg>${esc(T("official"))}</div>
     <a href="${CDT_URL}" target="_blank" rel="noopener"><span>${esc(T("cdt"))}<span class="d">${esc(T("cdtD"))}</span></span>${ext}</a>
     <a href="${SENATRAN_URL}" target="_blank" rel="noopener"><span>${esc(T("senatran"))}<span class="d">${esc(T("senatranD"))}</span></span>${ext}</a>
-    <a href="${DETRAN[uf]}" target="_blank" rel="noopener"><span>DETRAN-${uf}<span class="d">${short(DETRAN[uf])}</span></span>${ext}</a>`;
+    <a href="${lookupUrl(uf)}" target="_blank" rel="noopener"><span>DETRAN-${uf}<span class="d">${short(lookupUrl(uf))}</span></span>${ext}</a>`;
 }
 function renderChips(){
   $("chips").innerHTML=recent.length?recent.map((r,i)=>`<button type="button" class="chip" data-i2="${i}"><span class="cc">${r.uf}</span>${esc(r.plate)}<svg viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9"/></svg></button>`).join(""):`<span class="empty">${esc(T("norecent"))}</span>`;
@@ -234,7 +249,7 @@ function renderChips(){
 function go(){
   const plate=normPlate($("plate").value); if(!plate)return;
   recent=[{uf,plate},...recent.filter(r=>!(r.uf===uf&&plateKey(r.plate)===plateKey(plate)))].slice(0,12); LS.set("pg.recent2",recent); renderChips();
-  const w=window.open(DETRAN[uf],"_blank","noopener"); if(!w)location.href=DETRAN[uf];
+  const u=lookupUrl(uf);const w=window.open(u,"_blank","noopener"); if(!w)location.href=u;
 }
 $("form").addEventListener("submit",e=>{e.preventDefault();go()});
 $("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;const r=recent[+b.dataset.i2];uf=r.uf;LS.set("pg.uf",uf);$("uf").value=uf;$("plate").value=r.plate;update();renderOfficial();go()});
