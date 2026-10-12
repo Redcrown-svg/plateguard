@@ -81,6 +81,16 @@ input.ctl::placeholder{color:var(--muted-2);font-weight:400}
 .btn.sm{width:auto;padding:10px 16px;font-size:14px}
 .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .ctl.mono{font-family:var(--mono)}
+textarea.ctl{resize:vertical;font-family:var(--mono);font-size:13px;line-height:1.5}
+.bulk{margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
+.bulk summary{cursor:pointer;font-weight:600;font-size:14px;margin-bottom:10px;list-style:none}
+.bulk summary::-webkit-details-marker{display:none}
+.bulk summary::before{content:"▸ ";color:var(--accent)}
+.bulk[open] summary::before{content:"▾ "}
+.gsum{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px;margin-bottom:12px;border:1px solid var(--line-2);border-radius:10px;font-weight:700}
+.gsum .tot{font-family:var(--mono)}
+.gsum.bad{color:#ff5d5d;border-color:rgba(255,93,93,.4);background:rgba(255,93,93,.06)}
+.gsum.ok{color:var(--ok);border-color:var(--ok-line);background:rgba(47,210,122,.06)}
 .hint{font-size:12px;color:var(--muted);margin-top:6px;min-height:18px}.hint.warn{color:var(--warn)}
 .pprev{display:flex;height:92px;border-radius:10px;overflow:hidden;border:1px solid var(--line-2);background:linear-gradient(180deg,#f7f7f4,#e6e6e0);margin-bottom:16px;direction:ltr;color:#111;position:relative}
 .pprev .top{position:absolute;left:0;right:0;top:0;height:22px;background:var(--br-blue);color:#fff;font:700 10px var(--mono);letter-spacing:.2em;display:flex;align-items:center;justify-content:center;gap:10px}
@@ -230,6 +240,13 @@ footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;c
           <button class="btn sm" type="submit"><span data-i="gAddBtn"></span></button>
           <div class="hint" id="gSupHint"></div>
         </form>
+        <details class="bulk">
+          <summary data-i="gBulk"></summary>
+          <p class="hint" id="gBulkHelp" style="margin-bottom:10px"></p>
+          <textarea class="ctl" id="g-bulk" rows="5" spellcheck="false" placeholder="RJ; ABC1D23; 00000000000; 12345678901; Civic du client&#10;SP; ; ; 12345678901; Gol da cliente&#10;PR; XYZ4E56; 98765432100"></textarea>
+          <button class="btn sm" type="button" id="gbulkadd" style="margin-top:12px"><span data-i="gBulkBtn"></span></button>
+          <div class="hint" id="gBulkMsg"></div>
+        </details>
       </section>
       <section class="panel">
         <div class="ph2">
@@ -239,6 +256,7 @@ footer{border-top:1px solid var(--line);padding-block:22px 34px;font-size:13px;c
             <button class="clear" type="button" id="glogout"><span data-i="gLogout"></span></button>
           </div>
         </div>
+        <div id="gsum" class="gsum" hidden></div>
         <div id="glist"></div>
       </section>
     </div>
@@ -257,7 +275,7 @@ fmtOk:"Formato Mercosul ABC1D23 ou antigo ABC1234",fmtBad:"Placa fora do padrão
 go:"Consultar no DETRAN-{uf}",goHint:"Abre o site oficial em nova aba.",goHintForm:"RJ: formulário público — digite os dados e marque o captcha você mesmo.",goHintLogin:"Abre o site do DETRAN deste estado. Faça login lá para ver suas multas.",
 official:"Outras fontes oficiais",cdt:"Carteira Digital de Trânsito",cdtD:"Todas as suas multas, em qualquer estado, com 40% de desconto via SNE",senatran:"Senatran — Portal de Serviços",senatranD:"Infrações e pontos na CNH, com login gov.br",
 recent:"Consultas recentes",clear:"Limpar",norecent:"Nenhuma consulta ainda.",
-foot:"O PlateGuard não consulta multas por conta própria: ele leva você à fonte oficial. Nenhum resultado é gerado ou estimado.","rjTitle":"Resultado na hora (RJ)","rjDesc":"No Rio de Janeiro, veja suas multas aqui mesmo: digite o RENAVAM e o CPF do proprietário. A consulta é feita na base oficial do DETRAN-RJ.","rjRenavam":"RENAVAM","rjCpf":"CPF do proprietário","rjBtn":"Ver minhas multas","rjPrivacy":"Seus dados são enviados ao DETRAN-RJ só para esta consulta e não são guardados.","rjChecking":"Consultando o DETRAN-RJ…","rjNone":"Nenhuma multa encontrada","rjNoneD":"Nenhuma multa em aberto para este veículo no DETRAN-RJ.","rjSome":"{n} multa(s) encontrada(s)","rjSomeD":"Multas em aberto no DETRAN-RJ.","rjTotal":"Total","thDate":"Infração","thDue":"Vencimento","boleto":"Boleto","e_renavam":"RENAVAM inválido (11 dígitos).","e_cpf":"CPF inválido (11 dígitos).","e_falhou":"A consulta não retornou. Verifique os dados ou tente mais tarde.","e_rede":"Serviço indisponível no momento. Tente mais tarde.","tabPublic":"Consulta pública","tabGarage":"Garagem","gTitle":"Acesso da garagem","gGateDesc":"Ferramenta interna. Digite o código de acesso para consultar as multas da frota.","gCode":"Código de acesso","gEnter":"Entrar","gWrong":"Código incorreto.","gAdd":"Adicionar veículo","gNick":"Apelido (opcional)","gRenavam":"RENAVAM","gCpf":"CPF do proprietário (RJ)","gAddBtn":"Adicionar","gFleet":"Frota","gCheckAll":"Verificar todos","gLogout":"Sair","gEmpty":"Nenhum veículo na frota. Adicione um acima.","gChecking":"Consultando…","gNoneV":"Sem multas","gSomeV":"{n} multa(s)","gTotal":"Total","gRemove":"Remover","gDenied":"Código recusado. Faça login de novo.","gErrV":"Erro na consulta.","gSupported":"Estados disponíveis com resultado na hora","gReq":"Campos necessários"},
+foot:"O PlateGuard não consulta multas por conta própria: ele leva você à fonte oficial. Nenhum resultado é gerado ou estimado.","rjTitle":"Resultado na hora (RJ)","rjDesc":"No Rio de Janeiro, veja suas multas aqui mesmo: digite o RENAVAM e o CPF do proprietário. A consulta é feita na base oficial do DETRAN-RJ.","rjRenavam":"RENAVAM","rjCpf":"CPF do proprietário","rjBtn":"Ver minhas multas","rjPrivacy":"Seus dados são enviados ao DETRAN-RJ só para esta consulta e não são guardados.","rjChecking":"Consultando o DETRAN-RJ…","rjNone":"Nenhuma multa encontrada","rjNoneD":"Nenhuma multa em aberto para este veículo no DETRAN-RJ.","rjSome":"{n} multa(s) encontrada(s)","rjSomeD":"Multas em aberto no DETRAN-RJ.","rjTotal":"Total","thDate":"Infração","thDue":"Vencimento","boleto":"Boleto","e_renavam":"RENAVAM inválido (11 dígitos).","e_cpf":"CPF inválido (11 dígitos).","e_falhou":"A consulta não retornou. Verifique os dados ou tente mais tarde.","e_rede":"Serviço indisponível no momento. Tente mais tarde.","tabPublic":"Consulta pública","tabGarage":"Garagem","gTitle":"Acesso da garagem","gGateDesc":"Ferramenta interna. Digite o código de acesso para consultar as multas da frota.","gCode":"Código de acesso","gEnter":"Entrar","gWrong":"Código incorreto.","gAdd":"Adicionar veículo","gNick":"Apelido (opcional)","gRenavam":"RENAVAM","gCpf":"CPF do proprietário (RJ)","gAddBtn":"Adicionar","gFleet":"Frota","gCheckAll":"Verificar todos","gLogout":"Sair","gEmpty":"Nenhum veículo na frota. Adicione um acima.","gChecking":"Consultando…","gNoneV":"Sem multas","gSomeV":"{n} multa(s)","gTotal":"Total","gRemove":"Remover","gDenied":"Código recusado. Faça login de novo.","gErrV":"Erro na consulta.","gSupported":"Estados disponíveis com resultado na hora","gReq":"Campos necessários","gBulk":"Adicionar em lote (colar lista)","gBulkHelp":"Um veículo por linha: UF ; placa ; renavam ; CPF ; apelido (CPF e apelido opcionais conforme o estado).","gBulkBtn":"Adicionar lista","gBulkDone":"{a} adicionados · {i} ignorados","gSumLabel":"Frota"},
 fr:{sub:"Consultation d'amendes · Brésil",realtag:"AUCUNE DONNÉE INVENTÉE",disT:"En toute transparence",disB:"La consultation se fait directement sur le site officiel du DETRAN. Pour protéger vos données, ces services demandent que vous vous identifiiez vous-même et validiez le captcha. PlateGuard ne fait que vous y conduire : rien de ce que vous saisissez ne passe par nous ni n\u2019est conservé.",
 h1:"Consultez vos amendes <em>à la source officielle.</em>",lead:"Choisissez l'État et tapez la plaque : PlateGuard ouvre la consultation officielle du DETRAN. Gardez le RENAVAM (sur le CRLV) sous la main : la plupart des États demandent plaque + RENAVAM.",
 f1:"Sources officielles uniquement",f2:"26 États + PRF en temps réel",f3:"Rien n'est envoyé ni stocké par nous",
@@ -266,7 +284,7 @@ fmtOk:"Format Mercosul ABC1D23 ou ancien ABC1234",fmtBad:"Plaque hors format br�
 go:"Consulter sur DETRAN-{uf}",goHint:"Ouvre le site officiel dans un nouvel onglet.",goHintForm:"RJ : formulaire public — saisissez les données et cochez le captcha vous-même.",goHintLogin:"Ouvre le site du DETRAN de cet État. Connectez-vous sur place pour voir vos amendes.",
 official:"Autres sources officielles",cdt:"Carteira Digital de Trânsito",cdtD:"Toutes vos amendes, tous États confondus, avec 40 % de remise via SNE",senatran:"Senatran — Portail de services",senatranD:"Infractions et points sur le permis, avec login gov.br",
 recent:"Consultations récentes",clear:"Effacer",norecent:"Aucune consultation pour le moment.",
-foot:"PlateGuard ne consulte pas les amendes lui-même : il vous amène à la source officielle. Aucun résultat n'est généré ni estimé.","rjTitle":"Résultat immédiat (RJ)","rjDesc":"À Rio de Janeiro, vois tes amendes ici même : saisis le RENAVAM et le CPF du propriétaire. La consultation est faite sur la base officielle du DETRAN-RJ.","rjRenavam":"RENAVAM","rjCpf":"CPF du propriétaire","rjBtn":"Voir mes amendes","rjPrivacy":"Tes données sont envoyées au DETRAN-RJ uniquement pour cette consultation et ne sont pas conservées.","rjChecking":"Consultation du DETRAN-RJ…","rjNone":"Aucune amende trouvée","rjNoneD":"Aucune amende en cours pour ce véhicule au DETRAN-RJ.","rjSome":"{n} amende(s) trouvée(s)","rjSomeD":"Amendes en cours au DETRAN-RJ.","rjTotal":"Total","thDate":"Infraction","thDue":"Échéance","boleto":"Boleto","e_renavam":"RENAVAM invalide (11 chiffres).","e_cpf":"CPF invalide (11 chiffres).","e_falhou":"La consultation n'a rien renvoyé. Vérifie les données ou réessaie plus tard.","e_rede":"Service indisponible pour le moment. Réessaie plus tard.","tabPublic":"Consultation publique","tabGarage":"Garage","gTitle":"Accès garage","gGateDesc":"Outil interne. Saisis le code d'accès pour consulter les amendes de la flotte.","gCode":"Code d'accès","gEnter":"Entrer","gWrong":"Code incorrect.","gAdd":"Ajouter un véhicule","gNick":"Surnom (optionnel)","gRenavam":"RENAVAM","gCpf":"CPF du propriétaire (RJ)","gAddBtn":"Ajouter","gFleet":"Flotte","gCheckAll":"Tout vérifier","gLogout":"Quitter","gEmpty":"Aucun véhicule. Ajoutes-en un ci-dessus.","gChecking":"Consultation…","gNoneV":"Aucune amende","gSomeV":"{n} amende(s)","gTotal":"Total","gRemove":"Retirer","gDenied":"Code refusé. Reconnecte-toi.","gErrV":"Erreur de consultation.","gSupported":"États disponibles en résultat immédiat","gReq":"Champs requis"},
+foot:"PlateGuard ne consulte pas les amendes lui-même : il vous amène à la source officielle. Aucun résultat n'est généré ni estimé.","rjTitle":"Résultat immédiat (RJ)","rjDesc":"À Rio de Janeiro, vois tes amendes ici même : saisis le RENAVAM et le CPF du propriétaire. La consultation est faite sur la base officielle du DETRAN-RJ.","rjRenavam":"RENAVAM","rjCpf":"CPF du propriétaire","rjBtn":"Voir mes amendes","rjPrivacy":"Tes données sont envoyées au DETRAN-RJ uniquement pour cette consultation et ne sont pas conservées.","rjChecking":"Consultation du DETRAN-RJ…","rjNone":"Aucune amende trouvée","rjNoneD":"Aucune amende en cours pour ce véhicule au DETRAN-RJ.","rjSome":"{n} amende(s) trouvée(s)","rjSomeD":"Amendes en cours au DETRAN-RJ.","rjTotal":"Total","thDate":"Infraction","thDue":"Échéance","boleto":"Boleto","e_renavam":"RENAVAM invalide (11 chiffres).","e_cpf":"CPF invalide (11 chiffres).","e_falhou":"La consultation n'a rien renvoyé. Vérifie les données ou réessaie plus tard.","e_rede":"Service indisponible pour le moment. Réessaie plus tard.","tabPublic":"Consultation publique","tabGarage":"Garage","gTitle":"Accès garage","gGateDesc":"Outil interne. Saisis le code d'accès pour consulter les amendes de la flotte.","gCode":"Code d'accès","gEnter":"Entrer","gWrong":"Code incorrect.","gAdd":"Ajouter un véhicule","gNick":"Surnom (optionnel)","gRenavam":"RENAVAM","gCpf":"CPF du propriétaire (RJ)","gAddBtn":"Ajouter","gFleet":"Flotte","gCheckAll":"Tout vérifier","gLogout":"Quitter","gEmpty":"Aucun véhicule. Ajoutes-en un ci-dessus.","gChecking":"Consultation…","gNoneV":"Aucune amende","gSomeV":"{n} amende(s)","gTotal":"Total","gRemove":"Retirer","gDenied":"Code refusé. Reconnecte-toi.","gErrV":"Erreur de consultation.","gSupported":"États disponibles en résultat immédiat","gReq":"Champs requis","gBulk":"Ajout en lot (coller une liste)","gBulkHelp":"Un véhicule par ligne : UF ; plaque ; renavam ; CPF ; surnom (CPF et surnom optionnels selon l'État).","gBulkBtn":"Ajouter la liste","gBulkDone":"{a} ajoutés · {i} ignorés","gSumLabel":"Flotte"},
 en:{sub:"Fine lookup · Brazil",realtag:"NO INVENTED DATA",disT:"Full transparency",disB:"The lookup happens directly on the official DETRAN site. To protect your data, those services ask you to identify yourself and solve the captcha. PlateGuard only takes you there — nothing you type passes through us or is stored.",
 h1:"Check your fines <em>at the official source.</em>",lead:"Pick the state and type the plate: PlateGuard opens the official DETRAN lookup. Keep the RENAVAM (on the CRLV) handy; most states ask for plate + RENAVAM.",
 f1:"Official sources only",f2:"26 states + PRF, in real time",f3:"Nothing is sent or stored by us",
@@ -275,7 +293,7 @@ fmtOk:"Mercosul format ABC1D23 or legacy ABC1234",fmtBad:"Plate outside the Braz
 go:"Check at DETRAN-{uf}",goHint:"Opens the official site in a new tab.",goHintForm:"RJ: public form — enter the data and tick the captcha yourself.",goHintLogin:"Opens this state's DETRAN site. Log in there to see your fines.",
 official:"Other official sources",cdt:"Carteira Digital de Trânsito",cdtD:"All your fines, in any state, with 40% off via SNE",senatran:"Senatran — Services portal",senatranD:"Offences and licence points, with gov.br login",
 recent:"Recent lookups",clear:"Clear",norecent:"No lookups yet.",
-foot:"PlateGuard does not look up fines itself: it takes you to the official source. No result is generated or estimated.","rjTitle":"Instant result (RJ)","rjDesc":"In Rio de Janeiro, see your fines right here: enter the RENAVAM and the owner's CPF. The lookup runs on the official DETRAN-RJ database.","rjRenavam":"RENAVAM","rjCpf":"Owner's CPF","rjBtn":"See my fines","rjPrivacy":"Your data is sent to DETRAN-RJ only for this lookup and is not stored.","rjChecking":"Querying DETRAN-RJ…","rjNone":"No fines found","rjNoneD":"No open fines for this vehicle at DETRAN-RJ.","rjSome":"{n} fine(s) found","rjSomeD":"Open fines at DETRAN-RJ.","rjTotal":"Total","thDate":"Offence","thDue":"Due","boleto":"Boleto","e_renavam":"Invalid RENAVAM (11 digits).","e_cpf":"Invalid CPF (11 digits).","e_falhou":"The lookup returned nothing. Check the data or try again later.","e_rede":"Service unavailable right now. Try again later.","tabPublic":"Public lookup","tabGarage":"Garage","gTitle":"Garage access","gGateDesc":"Internal tool. Enter the access code to check the fleet's fines.","gCode":"Access code","gEnter":"Enter","gWrong":"Wrong code.","gAdd":"Add vehicle","gNick":"Nickname (optional)","gRenavam":"RENAVAM","gCpf":"Owner's CPF (RJ)","gAddBtn":"Add","gFleet":"Fleet","gCheckAll":"Check all","gLogout":"Log out","gEmpty":"No vehicles yet. Add one above.","gChecking":"Checking…","gNoneV":"No fines","gSomeV":"{n} fine(s)","gTotal":"Total","gRemove":"Remove","gDenied":"Code rejected. Log in again.","gErrV":"Lookup error.","gSupported":"States available with instant result","gReq":"Required fields"},
+foot:"PlateGuard does not look up fines itself: it takes you to the official source. No result is generated or estimated.","rjTitle":"Instant result (RJ)","rjDesc":"In Rio de Janeiro, see your fines right here: enter the RENAVAM and the owner's CPF. The lookup runs on the official DETRAN-RJ database.","rjRenavam":"RENAVAM","rjCpf":"Owner's CPF","rjBtn":"See my fines","rjPrivacy":"Your data is sent to DETRAN-RJ only for this lookup and is not stored.","rjChecking":"Querying DETRAN-RJ…","rjNone":"No fines found","rjNoneD":"No open fines for this vehicle at DETRAN-RJ.","rjSome":"{n} fine(s) found","rjSomeD":"Open fines at DETRAN-RJ.","rjTotal":"Total","thDate":"Offence","thDue":"Due","boleto":"Boleto","e_renavam":"Invalid RENAVAM (11 digits).","e_cpf":"Invalid CPF (11 digits).","e_falhou":"The lookup returned nothing. Check the data or try again later.","e_rede":"Service unavailable right now. Try again later.","tabPublic":"Public lookup","tabGarage":"Garage","gTitle":"Garage access","gGateDesc":"Internal tool. Enter the access code to check the fleet's fines.","gCode":"Access code","gEnter":"Enter","gWrong":"Wrong code.","gAdd":"Add vehicle","gNick":"Nickname (optional)","gRenavam":"RENAVAM","gCpf":"Owner's CPF (RJ)","gAddBtn":"Add","gFleet":"Fleet","gCheckAll":"Check all","gLogout":"Log out","gEmpty":"No vehicles yet. Add one above.","gChecking":"Checking…","gNoneV":"No fines","gSomeV":"{n} fine(s)","gTotal":"Total","gRemove":"Remove","gDenied":"Code rejected. Log in again.","gErrV":"Lookup error.","gSupported":"States available with instant result","gReq":"Required fields","gBulk":"Bulk add (paste a list)","gBulkHelp":"One vehicle per line: UF ; plate ; renavam ; CPF ; nickname (CPF and nickname optional depending on the state).","gBulkBtn":"Add list","gBulkDone":"{a} added · {i} skipped","gSumLabel":"Fleet"},
 ar:{sub:"الاستعلام عن المخالفات · البرازيل",realtag:"بدون بيانات مختلقة",disT:"بكل شفافية",disB:"يتم الاستعلام مباشرة على موقع DETRAN الرسمي. لحماية بياناتك، تطلب هذه الجهات أن تعرّف عن نفسك وتحل الكابتشا بنفسك. يكتفي PlateGuard بأخذك إلى هناك — لا شيء مما تكتبه يمر عبرنا أو يُحفظ.",
 h1:"استعلم عن مخالفاتك <em>من المصدر الرسمي.</em>",lead:"اختر الولاية وأدخل اللوحة: يفتح PlateGuard استعلام DETRAN الرسمي. احتفظ برقم RENAVAM (في وثيقة CRLV) فمعظم الولايات تطلب اللوحة + RENAVAM.",
 f1:"مصادر رسمية فقط",f2:"26 ولاية + PRF فورياً",f3:"لا نرسل ولا نخزن شيئاً",
@@ -284,7 +302,7 @@ fmtOk:"صيغة Mercosul ABC1D23 أو القديمة ABC1234",fmtBad:"اللوح
 go:"استعلم في DETRAN-{uf}",goHint:"يفتح الموقع الرسمي في تبويب جديد.",goHintForm:"RJ: نموذج عام — أدخل البيانات وحل الكابتشا بنفسك.",goHintLogin:"يفتح موقع DETRAN لهذه الولاية. سجّل الدخول هناك لرؤية مخالفاتك.",
 official:"مصادر رسمية أخرى",cdt:"Carteira Digital de Trânsito",cdtD:"كل مخالفاتك في أي ولاية، مع خصم 40% عبر SNE",senatran:"Senatran — بوابة الخدمات",senatranD:"المخالفات ونقاط الرخصة، بتسجيل دخول gov.br",
 recent:"الاستعلامات الأخيرة",clear:"مسح",norecent:"لا توجد استعلامات بعد.",
-foot:"لا يستعلم PlateGuard عن المخالفات بنفسه: بل يأخذك إلى المصدر الرسمي. لا تُولَّد أي نتيجة ولا تُقدَّر.","rjTitle":"نتيجة فورية (RJ)","rjDesc":"في ريو دي جانيرو، شاهد مخالفاتك هنا: أدخل RENAVAM ورقم CPF للمالك. يتم الاستعلام من قاعدة DETRAN-RJ الرسمية.","rjRenavam":"RENAVAM","rjCpf":"CPF للمالك","rjBtn":"عرض مخالفاتي","rjPrivacy":"تُرسل بياناتك إلى DETRAN-RJ لهذا الاستعلام فقط ولا تُحفظ.","rjChecking":"جارٍ الاستعلام من DETRAN-RJ…","rjNone":"لا توجد مخالفات","rjNoneD":"لا توجد مخالفات مفتوحة لهذه المركبة في DETRAN-RJ.","rjSome":"تم العثور على {n} مخالفة","rjSomeD":"مخالفات مفتوحة في DETRAN-RJ.","rjTotal":"الإجمالي","thDate":"المخالفة","thDue":"الاستحقاق","boleto":"إيصال","e_renavam":"RENAVAM غير صالح (11 رقماً).","e_cpf":"CPF غير صالح (11 رقماً).","e_falhou":"لم يُرجع الاستعلام شيئاً. تحقق من البيانات أو حاول لاحقاً.","e_rede":"الخدمة غير متاحة حالياً. حاول لاحقاً.","tabPublic":"استعلام عام","tabGarage":"الورشة","gTitle":"دخول الورشة","gGateDesc":"أداة داخلية. أدخل رمز الدخول للاستعلام عن مخالفات الأسطول.","gCode":"رمز الدخول","gEnter":"دخول","gWrong":"رمز غير صحيح.","gAdd":"إضافة مركبة","gNick":"اسم مستعار (اختياري)","gRenavam":"RENAVAM","gCpf":"CPF المالك (RJ)","gAddBtn":"إضافة","gFleet":"الأسطول","gCheckAll":"فحص الكل","gLogout":"خروج","gEmpty":"لا توجد مركبات. أضف واحدة أعلاه.","gChecking":"جارٍ الاستعلام…","gNoneV":"لا مخالفات","gSomeV":"{n} مخالفة","gTotal":"الإجمالي","gRemove":"إزالة","gDenied":"رُفض الرمز. سجّل الدخول مجدداً.","gErrV":"خطأ في الاستعلام.","gSupported":"الولايات المتاحة بنتيجة فورية","gReq":"الحقول المطلوبة"}
+foot:"لا يستعلم PlateGuard عن المخالفات بنفسه: بل يأخذك إلى المصدر الرسمي. لا تُولَّد أي نتيجة ولا تُقدَّر.","rjTitle":"نتيجة فورية (RJ)","rjDesc":"في ريو دي جانيرو، شاهد مخالفاتك هنا: أدخل RENAVAM ورقم CPF للمالك. يتم الاستعلام من قاعدة DETRAN-RJ الرسمية.","rjRenavam":"RENAVAM","rjCpf":"CPF للمالك","rjBtn":"عرض مخالفاتي","rjPrivacy":"تُرسل بياناتك إلى DETRAN-RJ لهذا الاستعلام فقط ولا تُحفظ.","rjChecking":"جارٍ الاستعلام من DETRAN-RJ…","rjNone":"لا توجد مخالفات","rjNoneD":"لا توجد مخالفات مفتوحة لهذه المركبة في DETRAN-RJ.","rjSome":"تم العثور على {n} مخالفة","rjSomeD":"مخالفات مفتوحة في DETRAN-RJ.","rjTotal":"الإجمالي","thDate":"المخالفة","thDue":"الاستحقاق","boleto":"إيصال","e_renavam":"RENAVAM غير صالح (11 رقماً).","e_cpf":"CPF غير صالح (11 رقماً).","e_falhou":"لم يُرجع الاستعلام شيئاً. تحقق من البيانات أو حاول لاحقاً.","e_rede":"الخدمة غير متاحة حالياً. حاول لاحقاً.","tabPublic":"استعلام عام","tabGarage":"الورشة","gTitle":"دخول الورشة","gGateDesc":"أداة داخلية. أدخل رمز الدخول للاستعلام عن مخالفات الأسطول.","gCode":"رمز الدخول","gEnter":"دخول","gWrong":"رمز غير صحيح.","gAdd":"إضافة مركبة","gNick":"اسم مستعار (اختياري)","gRenavam":"RENAVAM","gCpf":"CPF المالك (RJ)","gAddBtn":"إضافة","gFleet":"الأسطول","gCheckAll":"فحص الكل","gLogout":"خروج","gEmpty":"لا توجد مركبات. أضف واحدة أعلاه.","gChecking":"جارٍ الاستعلام…","gNoneV":"لا مخالفات","gSomeV":"{n} مخالفة","gTotal":"الإجمالي","gRemove":"إزالة","gDenied":"رُفض الرمز. سجّل الدخول مجدداً.","gErrV":"خطأ في الاستعلام.","gSupported":"الولايات المتاحة بنتيجة فورية","gReq":"الحقول المطلوبة","gBulk":"إضافة دفعة (ألصق قائمة)","gBulkHelp":"مركبة واحدة لكل سطر: UF ؛ اللوحة ؛ renavam ؛ CPF ؛ الاسم (CPF والاسم اختياريان حسب الولاية).","gBulkBtn":"إضافة القائمة","gBulkDone":"{a} أضيفت · {i} تم تجاهلها","gSumLabel":"الأسطول"}
 };
 /* Consultation publique (redirection) = seulement les États SANS consultation Infosimples.
    Aujourd'hui : Sergipe (SE) uniquement. Tous les autres sont dans le garage (résultat direct). */
@@ -362,6 +380,7 @@ $("tabs2").addEventListener("click",e=>{const b=e.target.closest("button");if(b)
 // ---------- Garage ----------
 let acode=""; try{acode=localStorage.getItem("pg.acode")||""}catch(e){}
 let garage=LS.get("pg.garage",[]);
+const results={}; // id -> {count,total} du dernier contrôle
 const guid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 function showGarageOrGate(){
   const ok=!!acode;
@@ -394,7 +413,7 @@ $("gform").addEventListener("submit",e=>{
   renderFleet();
 });
 function renderFleet(){
-  if(!garage.length){$("glist").innerHTML=`<div class="empty" style="padding:8px">${esc(T("gEmpty"))}</div>`;return}
+  if(!garage.length){$("glist").innerHTML=`<div class="empty" style="padding:8px">${esc(T("gEmpty"))}</div>`;renderSummary();return}
   $("glist").innerHTML=garage.map(v=>`<div class="gcard" data-id="${v.id}">
     <div class="gh">
       <div class="gt"><b>${esc(v.nick||v.plate||v.uf)}</b>
@@ -404,13 +423,46 @@ function renderFleet(){
     </div>
     <div class="gr" id="gr-${v.id}"></div>
   </div>`).join("");
+  renderSummary();
 }
 $("glist").addEventListener("click",e=>{
   const b=e.target.closest("[data-act]"); if(!b)return; const id=b.closest(".gcard").dataset.id; const v=garage.find(x=>x.id===id); if(!v)return;
-  if(b.dataset.act==="del"){ garage=garage.filter(x=>x.id!==id); LS.set("pg.garage",garage); renderFleet(); }
+  if(b.dataset.act==="del"){ garage=garage.filter(x=>x.id!==id); delete results[id]; LS.set("pg.garage",garage); renderFleet(); renderSummary(); }
   else checkVehicle(v);
 });
-$("gcheckall").addEventListener("click",async()=>{ for(const v of garage){ await checkVehicle(v);} });
+$("gcheckall").addEventListener("click",async()=>{
+  if(!garage.length)return;
+  const btn=$("gcheckall"); btn.disabled=true;
+  const q=[...garage], pool=Math.min(5,q.length);
+  const work=async()=>{ while(q.length){ await checkVehicle(q.shift()); } };
+  try{ await Promise.all(Array.from({length:pool},work)); } finally{ btn.disabled=false; }
+});
+function renderSummary(){
+  const live=new Set(garage.map(v=>v.id));
+  const ids=Object.keys(results).filter(id=>live.has(id));
+  const el=$("gsum"); if(!el)return;
+  if(!ids.length){ el.hidden=true; return; }
+  let c=0,t=0; for(const id of ids){ c+=results[id].count||0; t+=results[id].total||0; }
+  el.hidden=false; el.className="gsum "+(c>0?"bad":"ok");
+  el.innerHTML=`<span>${esc(T("gSumLabel"))} · ${c>0?esc(T("gSomeV").replace("{n}",c)):esc(T("gNoneV"))}</span><span class="tot">${fmtBRL(t)}</span>`;
+}
+$("gbulkadd").addEventListener("click",()=>{
+  const lines=$("g-bulk").value.split(/\n+/).map(s=>s.trim()).filter(Boolean);
+  let added=0,skip=0;
+  for(const line of lines){
+    const p=line.split(/[;,\t]+/).map(s=>s.trim());
+    const uf=(p[0]||"").toUpperCase();
+    if(!GREQ[uf]){ skip++; continue; }
+    const plate=normPlate(p[1]||""), renavam=(p[2]||"").replace(/\D/g,""), cpf=(p[3]||"").replace(/\D/g,""), nick=(p[4]||"");
+    const req=greq(uf), have={placa:plate.length>=6,renavam:renavam.length>=9,cpf:cpf.length===11};
+    if(!req.every(x=>have[x])){ skip++; continue; }
+    garage.push({id:guid(),uf,plate,renavam,cpf,nick}); added++;
+  }
+  if(added){ LS.set("pg.garage",garage); renderFleet(); }
+  $("g-bulk").value="";
+  const msg=$("gBulkMsg"); msg.textContent=T("gBulkDone").replace("{a}",added).replace("{i}",skip);
+  msg.className="hint"+(skip&&!added?" warn":"");
+});
 async function checkVehicle(v){
   const cell=$("gr-"+v.id); if(!cell)return;
   cell.innerHTML=`<span class="spin"></span> ${esc(T("gChecking"))}`;
@@ -418,8 +470,8 @@ async function checkVehicle(v){
     const r=await fetch(WORKER_URL,{method:"POST",headers:{"Content-Type":"application/json","X-Access-Code":acode},body:JSON.stringify({uf:v.uf,placa:v.plate,renavam:v.renavam,cpf:v.cpf})});
     if(r.status===401){ acode=""; try{localStorage.removeItem("pg.acode")}catch(x){} showGarageOrGate(); return; }
     const j=await r.json();
-    if(!j||j.ok!==true){ cell.innerHTML=`<span class="st err">${esc(T("gErrV"))}</span>`; return; }
-    if(j.count===0){ cell.innerHTML=`<span class="st ok">${esc(T("gNoneV"))}</span>`; return; }
+    if(!j||j.ok!==true){ cell.innerHTML=`<span class="st err">${esc(T("gErrV"))}</span>`; delete results[v.id]; renderSummary(); return; }
+    if(j.count===0){ cell.innerHTML=`<span class="st ok">${esc(T("gNoneV"))}</span>`; results[v.id]={count:0,total:0}; renderSummary(); return; }
     let h=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><span class="st bad">${esc(T("gSomeV").replace("{n}",j.count))}</span><span class="mono" style="font-weight:700;color:#ff5d5d">${fmtBRL(j.total||0)}</span></div>`;
     for(const m of j.multas){
       h+=`<div class="mrow"><div><b>${m.ait?("AIT "+esc(m.ait)):(m.descricao?esc(m.descricao):"—")}</b><div class="m">`+
@@ -429,7 +481,8 @@ async function checkVehicle(v){
          `</div></div><div class="amt">${fmtBRL(m.valor||0)}</div></div>`;
     }
     cell.innerHTML=h;
-  }catch(err){ cell.innerHTML=`<span class="st err">${esc(T("gErrV"))}</span>`; }
+    results[v.id]={count:j.count,total:j.total||0}; renderSummary();
+  }catch(err){ cell.innerHTML=`<span class="st err">${esc(T("gErrV"))}</span>`; delete results[v.id]; renderSummary(); }
 }
 $("langs").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;lang=b.dataset.lang;LS.set("pg.lang",lang);applyLang();if(!$("view-garage").hidden)showGarageOrGate()});
 const tick=()=>{$("clock").textContent=new Date().toISOString().slice(11,19)+" UTC"};tick();setInterval(tick,1000);
