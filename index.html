@@ -399,7 +399,12 @@ function toggleCpf(){
 }
 $("g-uf").addEventListener("change",toggleCpf);
 $("g-renavam").addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,11)});
-$("g-cpf").addEventListener("input",e=>{e.target.value=e.target.value.replace(/\D/g,"").slice(0,11)});
+const fmtCpf=v=>{const d=v.replace(/\D/g,"").slice(0,11);
+  if(d.length>9)return d.slice(0,3)+"."+d.slice(3,6)+"."+d.slice(6,9)+"-"+d.slice(9);
+  if(d.length>6)return d.slice(0,3)+"."+d.slice(3,6)+"."+d.slice(6);
+  if(d.length>3)return d.slice(0,3)+"."+d.slice(3);
+  return d;};
+$("g-cpf").addEventListener("input",e=>{e.target.value=fmtCpf(e.target.value)});
 $("gateform").addEventListener("submit",e=>{e.preventDefault();const c=$("gate-code").value.trim();if(!c)return;acode=c;try{localStorage.setItem("pg.acode",c)}catch(x){}$("gate-code").value="";$("gateerr").textContent="";showGarageOrGate()});
 $("glogout").addEventListener("click",()=>{acode="";try{localStorage.removeItem("pg.acode")}catch(x){}showGarageOrGate()});
 $("gform").addEventListener("submit",e=>{
